@@ -1,6 +1,7 @@
 package main;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,5 +10,12 @@ public class Main {
         window.setResizable(false);
         window.setTitle("Mi juego");
 
+        PanelJuego pJuego = new PanelJuego();
+        window.add(pJuego);
+
+        window.pack();
+
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
     }
 }

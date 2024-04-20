@@ -11,10 +11,10 @@ public class PanelJuego extends JPanel implements Runnable {
     public final int tamañoCuadro = originalPixel * escala;
 
     //Setup de la pantalla
-    public final int maxCol = 16;
-    public final int maxFil = 12;
-    public final int altoPantalla = tamañoCuadro * maxFil;
-    public final int anchoPantalla = tamañoCuadro * maxCol;
+    public final int maxCol = 20;
+    public final int maxFil = 15;
+    public final int altoPantalla = (tamañoCuadro * maxFil)/escala; //640 - 1280 pixeles
+    public final int anchoPantalla = (tamañoCuadro * maxCol)/escala; // 480 - 960 pixeles
 
     //Dimensiones del juego
     public final int maxJuegoFila = 100;
@@ -33,6 +33,10 @@ public class PanelJuego extends JPanel implements Runnable {
         this.setDoubleBuffered(true);
     }
 
+    public void startGameThread() {
+        gameThread = new Thread(this);
+        gameThread.start();
+    }
 
     @Override
     public void run() {
@@ -45,7 +49,7 @@ public class PanelJuego extends JPanel implements Runnable {
         while(gameThread != null)
         {
         tiempoActual = System.nanoTime();
-        delta += (tiempoActual - ultimoTiempo) / intervaloDibujo
+        delta += (tiempoActual - ultimoTiempo) / intervaloDibujo;
         }
     }
 }
