@@ -19,60 +19,75 @@ public class Jugador extends SuperEntidad
         this.pJuego = pJuego;
         this.gestTec = gestTec;
         setValoresPorDefecto();
+        setJugadorImagen();
     }
 
     public void setValoresPorDefecto()
     {
-        x = pJuego.altoPantalla/2;
-        y = pJuego.anchoPantalla/2;
-        direction = "abajo";
+        x = 100;
+        y = 100;
+        velocidad = 3;
+        direccion = "abajo"; //ASIGNACION DE VALOR POR DEFECTO PARA SABER COMO SE VA APARECER DIBUAJADO EL PERSONAJE LA PRIMERA VEZ
     }
 
     public void setJugadorImagen()
     {
         try
         {
-            basica = ImageIO.read(getClass().getResourceAsStream("/jugadores/basica"));
+            //ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA ABAJO
+            imagenAbajo = ImageIO.read(getClass().getResourceAsStream("/jugador/adelante/Frontal.png"));
+            abajo1 = ImageIO.read(getClass().getResourceAsStream("/jugador/adelante/MovimientoAdelante1.png"));
+            abajo2 = ImageIO.read(getClass().getResourceAsStream("/jugador/adelante/MovimientoAdelante2.png"));
+            abajo3 = ImageIO.read(getClass().getResourceAsStream("/jugador/adelante/MovimientoAdelante3.png"));
+            abajo4 = ImageIO.read(getClass().getResourceAsStream("/jugador/adelante/MovimientoAdelante4.png"));
+            imagenArriba = ImageIO.read(getClass().getResourceAsStream("/jugador/atras/Espalda.png"));
+            imagenDrch = ImageIO.read(getClass().getResourceAsStream("/jugador/derecha/Derecha.png"));
+            imagenIzq = ImageIO.read(getClass().getResourceAsStream("/jugador/izquierda/Izquierda.png"));
         }catch (IOException e)
         {
             e.printStackTrace();
         }
     }
 
-    public void update()
+    public void update(double tiempoDelta)
     {
-        if (gestTec.arribaPres)
+        if (gestTec.arribaPres || gestTec.abajoPres || gestTec.drchPres || gestTec.izqPres)
         {
-            direction = "arriba";
-            y -= speed;
-        }
-        if (gestTec.izqPres)
-        {
-            direction = "izquierda";
-            x -= speed;
-        }
-        if (gestTec.drchPres)
-        {
-            direction = "derecha";
-            x += speed;
-        }
-        if (gestTec.abajoPres)
-        {
-            direction = "abajo";
-            y += speed;
-        }
-    }
-    public void draw(Graphics2D graphics2D)
-    {
-
-        BufferedImage imagen = null;
-
-        switch (direction)
-        {
-            case "up"->
+            if (gestTec.arribaPres)
             {
-
+                y -= (velocidad * tiempoDelta); // Multiplicar por tiempoDelta
+                direccion = "arriba";
+            }
+            else if (gestTec.izqPres)
+            {
+                x -= (velocidad * tiempoDelta); // Multiplicar por tiempoDelta
+                direccion = "izquierda";
+            }
+            else if (gestTec.drchPres)
+            {
+                x += (velocidad * tiempoDelta); // Multiplicar por tiempoDelta
+                direccion = "derecha";
+            }
+            else if (gestTec.abajoPres)
+            {
+                y += (velocidad * tiempoDelta); // Multiplicar por tiempoDelta
+                direccion = "abajo";
             }
         }
+    }
+
+    public void draw(Graphics2D g2)
+    {
+
+        BufferedImage imagen = switch (direccion) {
+            case "arriba" -> imagenArriba;
+            case "abajo" -> imagenAbajo;
+            case "derecha" -> imagenDrch;
+            case "izquierda" -> imagenIzq;
+            default -> null;
+        };
+
+        g2.drawImage(imagen,x,y,pJuego.dimensionCuadro,pJuego.dimensionCuadro, null);
+
     }
 }

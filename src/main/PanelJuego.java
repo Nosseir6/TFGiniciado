@@ -24,7 +24,7 @@ public class PanelJuego extends JPanel implements Runnable {
     public final int maxJuegoColumna = 40;
 
     //FPS
-    int fps = 60;
+    int fps = 120;
     int playerX = 100;
     int playerY = 100;
     int playerSpeed = 4;
@@ -53,48 +53,48 @@ public class PanelJuego extends JPanel implements Runnable {
 
     @Override
     public void run() {
-        double intervaloDibujo = (double)1000000000/fps;
-        double delta =0;
-        long ultimoTiempo = System.nanoTime();
+        double tiempoDeltaAcumulado = 0;
+        double tiempoDelta = 0;
         long tiempoActual;
-        long contador = 0;
-        int contDibujo = 0;
-        while(gameThread != null)
-        {
+        long tiempoAnterior = System.nanoTime();
 
-            //1º ACTUALIZAMOS INFORMACION ANTES DE DIBUJAR
+        while (gameThread != null) {
             tiempoActual = System.nanoTime();
-            delta += (tiempoActual - ultimoTiempo) / intervaloDibujo;
-            contador += tiempoActual - ultimoTiempo;
-            ultimoTiempo = tiempoActual;
+            tiempoDelta = (tiempoActual - tiempoAnterior) / 1000000000.0; // Convertir a segundos
+            tiempoDeltaAcumulado += tiempoDelta;
 
-            if (delta > 1)
-            {
-                update();
-                repaint();
-                delta--;
-                contDibujo++;
+            while (tiempoDeltaAcumulado >= 1.0 / fps) {
+                // Actualizar el estado del juego
+                update(tiempoDelta);
+
+                tiempoDeltaAcumulado -= 1.0 / fps;
             }
 
-            if (contador > 1000000000)
-            {
-                System.out.println("FPS: "+contDibujo);
-                contDibujo = 0;
-                contador = 0;
-            }
-            //2º DIBUJAMOS YA CON LA INFORMACION ACTULAIZADA
+            // Redibujar la pantalla
+            repaint();
+
+            tiempoAnterior = tiempoActual;
         }
     }
 
-    public void update()
-    {
 
+
+    /*Problema con el ajuste de los fps, al incrementar los fps la velocidad varia lo cual es un error ya que la
+    velocidad a la que se muevee un jugador deberia ser independiente de los fps para ellos hay que usar la variable
+    delta del metodo run ya que ella es la que se encarga de */
+    public void update(double tiempoDelta)
+    {
+        //ACTUALIZAR JUGADOR
+        jugador.update(tiempoDelta);
     }
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D) g;
+
+        //DIBUJAR JUGADOR
+        jugador.draw(g2);
 
         g2.dispose();
     }
