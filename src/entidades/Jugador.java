@@ -1,5 +1,6 @@
 package entidades;
 
+import interfaces.Direcciones;
 import main.GestorTeclado;
 import main.PanelJuego;
 
@@ -27,7 +28,7 @@ public class Jugador extends SuperEntidad
         x = 100;
         y = 100;
         velocidad = 3;
-        direccion = "abajo"; //ASIGNACION DE VALOR POR DEFECTO PARA SABER COMO SE VA APARECER DIBUAJADO EL PERSONAJE LA PRIMERA VEZ
+        direccion = Direcciones.ABAJO; //ASIGNACION DE VALOR POR DEFECTO PARA SABER COMO SE VA APARECER DIBUAJADO EL PERSONAJE LA PRIMERA VEZ
     }
 
     public void setJugadorImagen()
@@ -47,45 +48,65 @@ public class Jugador extends SuperEntidad
         {
             e.printStackTrace();
         }
+
+
     }
 
-    public void update(double tiempoDelta)
+    public void update()
     {
         if (gestTec.arribaPres || gestTec.abajoPres || gestTec.drchPres || gestTec.izqPres)
         {
             if (gestTec.arribaPres)
             {
-                y -= (velocidad * tiempoDelta); // Multiplicar por tiempoDelta
-                direccion = "arriba";
+                y -= velocidad; // Multiplicar por tiempoDelta
+                direccion = Direcciones.ARRIBA;
             }
             else if (gestTec.izqPres)
             {
-                x -= (velocidad * tiempoDelta); // Multiplicar por tiempoDelta
-                direccion = "izquierda";
+                x -= velocidad; // Multiplicar por tiempoDelta
+                direccion = Direcciones.IZQUIERDA;
             }
             else if (gestTec.drchPres)
             {
-                x += (velocidad * tiempoDelta); // Multiplicar por tiempoDelta
-                direccion = "derecha";
+                x += velocidad; // Multiplicar por tiempoDelta
+                direccion = Direcciones.DERECHA;
             }
             else if (gestTec.abajoPres)
             {
-                y += (velocidad * tiempoDelta); // Multiplicar por tiempoDelta
-                direccion = "abajo";
+                y += velocidad; // Multiplicar por tiempoDelta
+                direccion = Direcciones.ABAJO;
             }
+
+            spriteCounter++;
+            if (spriteCounter > 12)
+            {
+                spriteNum = (spriteNum + 1) % 5;
+                spriteCounter = 0;
+            }
+        }
+        else
+        {
+            spriteNum = 0;
+            spriteCounter = 0;
         }
     }
 
     public void draw(Graphics2D g2)
     {
+        BufferedImage[] imagenesArriba = {imagenArriba, arriba1, arriba2, arriba3, arriba4};
+        BufferedImage[] imagenesAbajo = {imagenAbajo, abajo1, abajo2, abajo3, abajo4};
+        BufferedImage[] imagenesIzquierda = {imagenIzq, izq1, izq2, izq3, izq4};
+        BufferedImage[] imagenesDerecha = {imagenDrch, drch1, drch2, drch3, drch4};
 
-        BufferedImage imagen = switch (direccion) {
-            case "arriba" -> imagenArriba;
-            case "abajo" -> imagenAbajo;
-            case "derecha" -> imagenDrch;
-            case "izquierda" -> imagenIzq;
-            default -> null;
-        };
+        BufferedImage imagen = null;
+
+        switch (direccion)
+        {
+            case ABAJO -> imagen = imagenesAbajo[spriteNum];
+            case ARRIBA -> imagen = imagenesArriba[spriteNum];
+            case IZQUIERDA -> imagen = imagenesIzquierda[spriteNum];
+            case DERECHA -> imagen = imagenesDerecha[spriteNum];
+        }
 
         g2.drawImage(imagen,x,y,pJuego.dimensionCuadro,pJuego.dimensionCuadro, null);
 

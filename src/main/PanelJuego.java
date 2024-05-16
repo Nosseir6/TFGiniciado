@@ -24,7 +24,7 @@ public class PanelJuego extends JPanel implements Runnable {
     public final int maxJuegoColumna = 40;
 
     //FPS
-    int fps = 120;
+    int fps = 60;
     int playerX = 100;
     int playerY = 100;
     int playerSpeed = 4;
@@ -53,27 +53,23 @@ public class PanelJuego extends JPanel implements Runnable {
 
     @Override
     public void run() {
-        double tiempoDeltaAcumulado = 0;
-        double tiempoDelta = 0;
+        double intervaloDeDibujo =(double) 1000000000/fps;
+        double delta = 0;
+        long ultimoTiempo = System.nanoTime();
         long tiempoActual;
-        long tiempoAnterior = System.nanoTime();
 
-        while (gameThread != null) {
+        while (gameThread != null)
+        {
             tiempoActual = System.nanoTime();
-            tiempoDelta = (tiempoActual - tiempoAnterior) / 1000000000.0; // Convertir a segundos
-            tiempoDeltaAcumulado += tiempoDelta;
+            delta += (tiempoActual-ultimoTiempo) / intervaloDeDibujo;
+            ultimoTiempo = tiempoActual;
 
-            while (tiempoDeltaAcumulado >= 1.0 / fps) {
-                // Actualizar el estado del juego
-                update(tiempoDelta);
-
-                tiempoDeltaAcumulado -= 1.0 / fps;
+            if (delta >= 1)
+            {
+                update();
+                repaint();
+                delta--;
             }
-
-            // Redibujar la pantalla
-            repaint();
-
-            tiempoAnterior = tiempoActual;
         }
     }
 
@@ -82,10 +78,10 @@ public class PanelJuego extends JPanel implements Runnable {
     /*Problema con el ajuste de los fps, al incrementar los fps la velocidad varia lo cual es un error ya que la
     velocidad a la que se muevee un jugador deberia ser independiente de los fps para ellos hay que usar la variable
     delta del metodo run ya que ella es la que se encarga de */
-    public void update(double tiempoDelta)
+    public void update()
     {
         //ACTUALIZAR JUGADOR
-        jugador.update(tiempoDelta);
+        jugador.update();
     }
     public void paintComponent(Graphics g)
     {
