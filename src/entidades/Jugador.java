@@ -44,6 +44,8 @@ public class Jugador extends SuperEntidad
             imagenArriba = ImageIO.read(getClass().getResourceAsStream("/jugador/atras/Espalda.png"));
             imagenDrch = ImageIO.read(getClass().getResourceAsStream("/jugador/derecha/Derecha.png"));
             imagenIzq = ImageIO.read(getClass().getResourceAsStream("/jugador/izquierda/Izquierda.png"));
+            izq1 = ImageIO.read(getClass().getResourceAsStream("/jugador/izquierda/MovimientoIzq1.png"));
+            izq2 = ImageIO.read(getClass().getResourceAsStream("/jugador/izquierda/MovimientoIzq2.png"));
         }catch (IOException e)
         {
             e.printStackTrace();
@@ -80,10 +82,14 @@ public class Jugador extends SuperEntidad
             spriteCounter++;
             if (spriteCounter > 12)
             {
-                spriteNum = (spriteNum + 1) % 5;
+                if (gestTec.abajoPres)
+                    spriteNum = (spriteNum + 1) % 5;
+                if (gestTec.izqPres)
+                    spriteNum = (spriteNum + 1) % 3;
                 spriteCounter = 0;
             }
         }
+
         else
         {
             spriteNum = 0;

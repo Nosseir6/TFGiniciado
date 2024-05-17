@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Trabajando con la optimizacion de codigo en la funcion run intentando implementar el metodo delta">
-      <change afterPath="$PROJECT_DIR$/src/interfaces/Direcciones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagenes/jugador/izquierda/MovimientoIzq1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagenes/jugador/izquierda/MovimientoIzq2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/izquierda/Izquierda.png" beforeDir="false" afterPath="$PROJECT_DIR$/imagenes/jugador/izquierda/Izquierda.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/PanelJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/PanelJuego.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,14 +39,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/imagenes/jugador/izquierda"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador\izquierda" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
