@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Trabajando con la optimizacion de codigo en la funcion run intentando implementar el metodo delta">
-      <change afterPath="$PROJECT_DIR$/imagenes/jugador/izquierda/MovimientoIzq1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/jugador/izquierda/MovimientoIzq2.png" afterDir="false" />
+    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Cambiado los sprites e incluido la animacion hacia la izquierda">
+      <change afterPath="$PROJECT_DIR$/imagenes/tiles/darkWall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagenes/tiles/marble_floor1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagenes/tiles/marble_wall1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/casilla/Casilla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagenes/jugador/izquierda/Izquierda.png" beforeDir="false" afterPath="$PROJECT_DIR$/imagenes/jugador/izquierda/Izquierda.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/PanelJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/PanelJuego.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,11 +46,12 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/imagenes/jugador/izquierda"
+    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/imagenes/tiles"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\tiles" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador\izquierda" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador" />
     </key>
@@ -102,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713897757512</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cambiado los sprites e incluido la animacion hacia la izquierda">
+      <option name="closed" value="true" />
+      <created>1715977367294</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715977367294</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +131,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modificado en panel para que se muestre en pantalla y ajustado la resolucion asi como comenzado a trabajar en la ejecucion del juego" />
     <MESSAGE value="Trabajando con la optimizacion de codigo en la funcion run intentando implementar el metodo delta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trabajando con la optimizacion de codigo en la funcion run intentando implementar el metodo delta" />
+    <MESSAGE value="Cambiado los sprites e incluido la animacion hacia la izquierda" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiado los sprites e incluido la animacion hacia la izquierda" />
   </component>
 </project>

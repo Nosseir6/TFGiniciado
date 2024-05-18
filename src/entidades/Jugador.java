@@ -114,7 +114,7 @@ public class Jugador extends SuperEntidad
             case DERECHA -> imagen = imagenesDerecha[spriteNum];
         }
 
-        g2.drawImage(imagen,x,y,pJuego.dimensionCuadro,pJuego.dimensionCuadro, null);
+        g2.drawImage(imagen,x,y,pJuego.dimensionCasillas,pJuego.dimensionCasillas, null);
 
     }
 }
