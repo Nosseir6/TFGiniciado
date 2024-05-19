@@ -25,6 +25,13 @@ public class Jugador extends SuperEntidad
 
         posXPantalla = pJuego.anchoPantalla/2 - (pJuego.dimensionCasillas);
         posYPantalla = pJuego.altoPantalla/2 - (pJuego.dimensionCasillas/2);
+
+        hitBox = new Rectangle();
+        hitBox.x = 12 * pJuego.escala;
+        hitBox.y = 8 * pJuego.escala;
+        hitBox.width = 12 * pJuego.escala;
+        hitBox.height = 16 * pJuego.escala;
+
         setValoresPorDefecto();
         setJugadorImagen();
     }
@@ -66,25 +73,37 @@ public class Jugador extends SuperEntidad
         {
             if (gestTec.arribaPres)
             {
-                posMundoY -= velocidad; // Multiplicar por tiempoDelta
                 direccion = Direcciones.ARRIBA;
             }
             else if (gestTec.izqPres)
             {
-                posMundoX -= velocidad; // Multiplicar por tiempoDelta
                 direccion = Direcciones.IZQUIERDA;
             }
             else if (gestTec.drchPres)
             {
-                posMundoX += velocidad; // Multiplicar por tiempoDelta
+
                 direccion = Direcciones.DERECHA;
             }
             else if (gestTec.abajoPres)
             {
-                posMundoY += velocidad; // Multiplicar por tiempoDelta
                 direccion = Direcciones.ABAJO;
             }
 
+            //COMPROBAR COLISION DE CASILLAS
+            hayColision = false;
+            pJuego.gestColisiones.comprobarCasilla(this);
+
+            //SI hayColision == false EL JUGADOR SE PUEDE MOVER
+            if (!hayColision)
+            {
+                switch (direccion)
+                {
+                    case ARRIBA -> posMundoY -= velocidad; // Multiplicar por tiempoDelta
+                    case ABAJO -> posMundoY += velocidad; // Multiplicar por tiempoDelta
+                    case DERECHA -> posMundoX += velocidad; // Multiplicar por tiempoDelta
+                    case IZQUIERDA -> posMundoX -= velocidad; // Multiplicar por tiempoDelta
+                }
+            }
             spriteCounter++;
             if (spriteCounter > 12)
             {

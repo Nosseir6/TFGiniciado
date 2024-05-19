@@ -2,6 +2,7 @@ package entidades;
 
 import interfaces.Direcciones;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class SuperEntidad {
@@ -14,4 +15,7 @@ public class SuperEntidad {
     public Direcciones direccion;
     public int spriteCounter = 0;
     public int spriteNum = 1;
+
+    public Rectangle hitBox;
+    public boolean hayColision = false;
 }

@@ -10,7 +10,7 @@ public class PanelJuego extends JPanel implements Runnable {
 
     //Tamaño de pixel y escala de los dibujos
     final int originalPixel = 32;
-    final int escala = 2;
+    public final int escala = 2;
     public final int dimensionCasillas = originalPixel * escala;
 
     //Setup de la pantalla
@@ -31,7 +31,7 @@ public class PanelJuego extends JPanel implements Runnable {
     int playerY = 100;
     int playerSpeed = 4;
 
-
+     public GestorColisiones gestColisiones = new GestorColisiones(this);
     GestorCasillas gestCasillas = new GestorCasillas(this);
     GestorTeclado gestTec = new GestorTeclado();
     Thread gameThread;
