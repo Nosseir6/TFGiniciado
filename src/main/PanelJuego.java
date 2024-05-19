@@ -20,8 +20,10 @@ public class PanelJuego extends JPanel implements Runnable {
     public final int anchoPantalla = (dimensionCasillas * maxCol); // 480 - 960 pixeles
 
     //Dimensiones del juego
-    public final int maxJuegoFila = 100;
-    public final int maxJuegoColumna = 40;
+    public final int maxJuegoFila = 43;
+    public final int maxJuegoColumna = 20;
+    public final int anchoMundo = maxJuegoColumna * dimensionCasillas;
+    public final int altoMundo = maxJuegoFila * dimensionCasillas;
 
     //FPS
     int fps = 60;
@@ -33,7 +35,7 @@ public class PanelJuego extends JPanel implements Runnable {
     GestorCasillas gestCasillas = new GestorCasillas(this);
     GestorTeclado gestTec = new GestorTeclado();
     Thread gameThread;
-    Jugador jugador = new Jugador(this,gestTec);
+    public Jugador jugador = new Jugador(this,gestTec);
 
 
     //Constructor

@@ -15,18 +15,24 @@ public class Jugador extends SuperEntidad
     PanelJuego pJuego;
     GestorTeclado gestTec;
 
+    public final int posXPantalla;
+    public final int posYPantalla;
+
     public Jugador (PanelJuego pJuego, GestorTeclado gestTec)
     {
         this.pJuego = pJuego;
         this.gestTec = gestTec;
+
+        posXPantalla = pJuego.anchoPantalla/2 - (pJuego.dimensionCasillas);
+        posYPantalla = pJuego.altoPantalla/2 - (pJuego.dimensionCasillas/2);
         setValoresPorDefecto();
         setJugadorImagen();
     }
 
     public void setValoresPorDefecto()
     {
-        x = 100;
-        y = 100;
+        posMundoX = 500;
+        posMundoY = 100;
         velocidad = 3;
         direccion = Direcciones.ABAJO; //ASIGNACION DE VALOR POR DEFECTO PARA SABER COMO SE VA APARECER DIBUAJADO EL PERSONAJE LA PRIMERA VEZ
     }
@@ -60,22 +66,22 @@ public class Jugador extends SuperEntidad
         {
             if (gestTec.arribaPres)
             {
-                y -= velocidad; // Multiplicar por tiempoDelta
+                posMundoY -= velocidad; // Multiplicar por tiempoDelta
                 direccion = Direcciones.ARRIBA;
             }
             else if (gestTec.izqPres)
             {
-                x -= velocidad; // Multiplicar por tiempoDelta
+                posMundoX -= velocidad; // Multiplicar por tiempoDelta
                 direccion = Direcciones.IZQUIERDA;
             }
             else if (gestTec.drchPres)
             {
-                x += velocidad; // Multiplicar por tiempoDelta
+                posMundoX += velocidad; // Multiplicar por tiempoDelta
                 direccion = Direcciones.DERECHA;
             }
             else if (gestTec.abajoPres)
             {
-                y += velocidad; // Multiplicar por tiempoDelta
+                posMundoY += velocidad; // Multiplicar por tiempoDelta
                 direccion = Direcciones.ABAJO;
             }
 
@@ -114,7 +120,7 @@ public class Jugador extends SuperEntidad
             case DERECHA -> imagen = imagenesDerecha[spriteNum];
         }
 
-        g2.drawImage(imagen,x,y,pJuego.dimensionCasillas,pJuego.dimensionCasillas, null);
+        g2.drawImage(imagen, posXPantalla, posYPantalla,pJuego.dimensionCasillas,pJuego.dimensionCasillas, null);
 
     }
 }
