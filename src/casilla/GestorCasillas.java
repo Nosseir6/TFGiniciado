@@ -54,10 +54,10 @@ public class GestorCasillas {
 
             //Codigo para mejorar la eficiencia de dibujado del mapa dinuja solo si esta en la pantalla del jugador
             //En lugar de dibujar "to_do el mapa
-            if ((xMundo > pJuego.jugador.posMundoX - pJuego.jugador.posXPantalla) ||
-                    (xMundo < pJuego.jugador.posMundoX + pJuego.jugador.posXPantalla) ||
-                    (yMundo > pJuego.jugador.posMundoY - pJuego.jugador.posYPantalla) ||
-                    (yMundo < pJuego.jugador.posMundoY + pJuego.jugador.posYPantalla))
+            if ((xMundo + pJuego.dimensionCasillas > pJuego.jugador.posMundoX - pJuego.jugador.posXPantalla) ||
+                    (xMundo - pJuego.dimensionCasillas < pJuego.jugador.posMundoX + pJuego.jugador.posXPantalla) ||
+                    (yMundo + pJuego.dimensionCasillas > pJuego.jugador.posMundoY - pJuego.jugador.posYPantalla) ||
+                    (yMundo - pJuego.dimensionCasillas < pJuego.jugador.posMundoY + pJuego.jugador.posYPantalla))
             {
                 g2.drawImage(casillas[numCasilla].image, xPantalla, yPantalla, pJuego.dimensionCasillas, pJuego.dimensionCasillas, null);
             }

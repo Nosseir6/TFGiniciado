@@ -2,6 +2,7 @@ package main;
 
 import casilla.GestorCasillas;
 import entidades.Jugador;
+import objetos.SuperObjeto;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,11 +32,13 @@ public class PanelJuego extends JPanel implements Runnable {
     int playerY = 100;
     int playerSpeed = 4;
 
-     public GestorColisiones gestColisiones = new GestorColisiones(this);
+    public GestorColisiones gestColisiones = new GestorColisiones(this);
     GestorCasillas gestCasillas = new GestorCasillas(this);
     GestorTeclado gestTec = new GestorTeclado();
+    GestorObjetos gestObj = new GestorObjetos(this);
     Thread gameThread;
     public Jugador jugador = new Jugador(this,gestTec);
+    public SuperObjeto objetos[] = new SuperObjeto[10];
 
 
     //Constructor
@@ -46,6 +49,11 @@ public class PanelJuego extends JPanel implements Runnable {
         this.setDoubleBuffered(true);
         this.addKeyListener(gestTec);
         this.setFocusable(true);
+    }
+
+    public void setUpJuego()
+    {
+        gestObj.setObjeto();
     }
 
     public void startGameThread() {
@@ -93,6 +101,15 @@ public class PanelJuego extends JPanel implements Runnable {
 
         //DIBUJAR MAPA
         gestCasillas.draw(g2);
+        //DIBUJAR OBJETOS
+        for (SuperObjeto objeto : objetos)
+        {
+            if (objeto != null)
+            {
+                objeto.draw(g2,this);
+            }
+        }
+
         //DIBUJAR JUGADOR
         jugador.draw(g2);
 

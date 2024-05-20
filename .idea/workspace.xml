@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Añadido el mapa para el juego asi como modificado el codigo para que siga al jugadpor por todo el mapa la camara (por arreglar las esquinas)">
-      <change afterPath="$PROJECT_DIR$/src/main/GestorColisiones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagenes/objetos/cofre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/GestorObjetos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/objetos/Cofre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/objetos/SuperObjeto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapas/MapaBase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mapas/MapaBase.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/PanelJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/PanelJuego.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,16 +45,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nosse/IdeaProjects/TFGiniciado/imagenes/tiles&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/imagenes/objetos"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\objetos" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\tiles" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador\izquierda" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador" />
