@@ -1,6 +1,7 @@
 package entidades;
 
 import interfaces.Direcciones;
+import interfaces.TipoObjetos;
 import main.GestorTeclado;
 import main.PanelJuego;
 
@@ -18,6 +19,7 @@ public class Jugador extends SuperEntidad
     public final int posXPantalla;
     public final int posYPantalla;
 
+    private int numLlaves = 0;
     public Jugador (PanelJuego pJuego, GestorTeclado gestTec)
     {
         this.pJuego = pJuego;
@@ -30,7 +32,11 @@ public class Jugador extends SuperEntidad
         hitBox.x = 12 * pJuego.escala;
         hitBox.y = 8 * pJuego.escala;
         hitBox.width = 12 * pJuego.escala;
-        hitBox.height = 16 * pJuego.escala;
+        hitBox.height = 20 * pJuego.escala;
+
+
+        hitbox_XPorDefecto = hitBox.x;
+        hitbox_YPorDefecto = hitBox.y;
 
         setValoresPorDefecto();
         setJugadorImagen();
@@ -85,6 +91,7 @@ public class Jugador extends SuperEntidad
             izq6 = ImageIO.read(getClass().getResourceAsStream("/caballero/Izquierda/Izquierda7.png"));
         }catch (IOException e)
         {
+            System.out.println("Error al acceder a la imagenes");
             e.printStackTrace();
         }
 
@@ -112,6 +119,9 @@ public class Jugador extends SuperEntidad
             //COMPROBAR COLISION DE CASILLAS
             hayColision = false;
             pJuego.gestColisiones.comprobarCasilla(this);
+
+            //COMPROBAR COLISION DE OBJETOS
+            int indexObjeto = pJuego.gestColisiones.colisionObjetos(this,true);
 
             //SI hayColision == false EL JUGADOR SE PUEDE MOVER
             if (!hayColision) {
@@ -145,6 +155,21 @@ public class Jugador extends SuperEntidad
         }
 
         g2.drawImage(imagen, posXPantalla, posYPantalla,pJuego.dimensionCasillas,pJuego.dimensionCasillas, null);
+    }
 
+    public void recogerObjeto(int i)
+    {
+        if (i != 999)
+        {
+            TipoObjetos nombreObjeto = pJuego.objetos[i].nombre;
+
+            switch (nombreObjeto)
+            {
+                case LLAVE -> {
+                    numLlaves++;
+                    pJuego.objetos[i] = null;
+                }
+            }
+        }
     }
 }

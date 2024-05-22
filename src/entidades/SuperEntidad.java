@@ -16,6 +16,9 @@ public class SuperEntidad {
     public int spriteCounter = 0;
     public int spriteNum = 1;
 
+    public int hitbox_XPorDefecto;
+    public int hitbox_YPorDefecto;
+
     public Rectangle hitBox;
     public boolean hayColision = false;
 }

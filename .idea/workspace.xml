@@ -4,44 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Creados objetos cofre y llave junto con la clase gestora y SuperObjeto">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2024_9_36_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2024_9_36__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Abajo/WarriorDownWalk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Arriba/WarriorUpWalk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Derecha/WarriorRightWalk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/caballero/Izquierda/WarriorLeftWalk.png" afterDir="false" />
+    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Cambiados los sprites de imagenes y cambiado metodo para contar sprites">
+      <change afterPath="$PROJECT_DIR$/src/interfaces/TipoObjetos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GestorColisiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorColisiones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GestorObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorObjetos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Cofre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Cofre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/LLave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/LLave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/SuperObjeto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/SuperObjeto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +25,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -172,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716206011706</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Cambiados los sprites de imagenes y cambiado metodo para contar sprites">
+      <option name="closed" value="true" />
+      <created>1716375979833</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716375979833</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +175,7 @@
     <MESSAGE value="Añadida la clase Casilla y su gestor Correspondiente, ademas de añadido dos sprites para las casillas" />
     <MESSAGE value="Añadido el mapa para el juego asi como modificado el codigo para que siga al jugadpor por todo el mapa la camara (por arreglar las esquinas)" />
     <MESSAGE value="Creados objetos cofre y llave junto con la clase gestora y SuperObjeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creados objetos cofre y llave junto con la clase gestora y SuperObjeto" />
+    <MESSAGE value="Cambiados los sprites de imagenes y cambiado metodo para contar sprites" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiados los sprites de imagenes y cambiado metodo para contar sprites" />
   </component>
 </project>
