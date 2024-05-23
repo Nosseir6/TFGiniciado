@@ -5,9 +5,9 @@ import interfaces.TipoObjetos;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
-public class LLave extends SuperObjeto
+public class Llave extends SuperObjeto
 {
-    public LLave()
+    public Llave()
     {
         nombre = TipoObjetos.LLAVE;
         try {

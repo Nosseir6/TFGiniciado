@@ -7,15 +7,17 @@ import java.io.IOException;
 
 public class Cofre extends SuperObjeto
 {
+    public boolean abierto;
     public Cofre()
     {
         nombre = TipoObjetos.COFRE;
         try {
-            imagen = ImageIO.read(getClass().getResourceAsStream("/objetos/cofre.png"));
+            imagen = ImageIO.read(getClass().getResourceAsStream("/objetos/cofreNuevo.png"));
         }catch (IOException e)
         {
             e.printStackTrace();
         }
         colision = true;
+        abierto = false;
     }
 }

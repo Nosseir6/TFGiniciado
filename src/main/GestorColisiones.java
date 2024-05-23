@@ -93,7 +93,6 @@ public class GestorColisiones
                         entidad.hitBox.y -= entidad.velocidad;
                         if (entidad.hitBox.intersects(pJuego.objetos[i].hitbox))
                         {
-                            System.out.println("Hay colision arriba");
                             if (pJuego.objetos[i].colision)
                                 entidad.hayColision = true;
                             if (jugador)
@@ -104,7 +103,6 @@ public class GestorColisiones
                         entidad.hitBox.y += entidad.velocidad;
                         if (entidad.hitBox.intersects(pJuego.objetos[i].hitbox))
                         {
-                            System.out.println("Hay colision abajo");
                             if (pJuego.objetos[i].colision)
                                 entidad.hayColision = true;
                             if (jugador)
@@ -115,7 +113,6 @@ public class GestorColisiones
                         entidad.hitBox.x -= entidad.velocidad;
                         if (entidad.hitBox.intersects(pJuego.objetos[i].hitbox))
                         {
-                            System.out.println("Hay colision izquierda");
                             if (pJuego.objetos[i].colision)
                                 entidad.hayColision = true;
                             if (jugador)
@@ -126,7 +123,6 @@ public class GestorColisiones
                         entidad.hitBox.x += entidad.velocidad;
                         if (entidad.hitBox.intersects(pJuego.objetos[i].hitbox))
                         {
-                            System.out.println("Hay colision derecha ");
                             if (pJuego.objetos[i].colision)
                                 entidad.hayColision = true;
                             if (jugador)
@@ -140,7 +136,6 @@ public class GestorColisiones
                 pJuego.objetos[i].hitbox.y = pJuego.objetos[i].hitBoxDefaultY;
             }
         }
-
 
         return index;
     }

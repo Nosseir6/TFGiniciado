@@ -4,6 +4,7 @@ import interfaces.Direcciones;
 import interfaces.TipoObjetos;
 import main.GestorTeclado;
 import main.PanelJuego;
+import objetos.Cofre;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -122,6 +123,7 @@ public class Jugador extends SuperEntidad
 
             //COMPROBAR COLISION DE OBJETOS
             int indexObjeto = pJuego.gestColisiones.colisionObjetos(this,true);
+            interactuarConObjetos(indexObjeto);
 
             //SI hayColision == false EL JUGADOR SE PUEDE MOVER
             if (!hayColision) {
@@ -157,7 +159,7 @@ public class Jugador extends SuperEntidad
         g2.drawImage(imagen, posXPantalla, posYPantalla,pJuego.dimensionCasillas,pJuego.dimensionCasillas, null);
     }
 
-    public void recogerObjeto(int i)
+    public void interactuarConObjetos(int i)
     {
         if (i != 999)
         {
@@ -166,8 +168,50 @@ public class Jugador extends SuperEntidad
             switch (nombreObjeto)
             {
                 case LLAVE -> {
-                    numLlaves++;
                     pJuego.objetos[i] = null;
+                    numLlaves++;
+                    System.out.println("Tienes "+numLlaves+" llaves");
+                }
+                case COFRE -> {
+                    if (pJuego.objetos[i] instanceof Cofre)
+                    {
+                        if (((Cofre) pJuego.objetos[i]).abierto)
+                        {
+                            System.out.println("El cofre esta vacio");
+                        }
+                        else
+                        {
+                            if (numLlaves > 0)
+                            {
+                                try {
+                                    pJuego.objetos[i].imagen = ImageIO.read(getClass().getResourceAsStream("/objetos/cofreAbierto.png"));
+                                }catch (IOException e)
+                                {
+                                    System.out.println("No se encontro la imagen del cofre abierto");
+                                    e.printStackTrace();
+                                }
+                                numLlaves--;
+                                ((Cofre) pJuego.objetos[i]).abierto = true;
+                                System.out.println("Tienes "+numLlaves+" llaves");
+                            }
+                        }
+                    }
+                }
+                case PUERTA -> {
+                    if (numLlaves > 0 )
+                    {
+                        try {
+                            pJuego.objetos[i].imagen = ImageIO.read(getClass().getResourceAsStream("/objetos/puerta_Abierta.png"));
+                        }catch (IOException e)
+                        {
+                            System.out.println("Imagen de la puerta no encontrada");
+                            e.printStackTrace();
+                        }
+                        pJuego.objetos[i].colision = false;
+                        numLlaves--;
+                        System.out.println("Tienes "+numLlaves+" llaves");
+
+                    }
                 }
             }
         }
