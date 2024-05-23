@@ -4,39 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Añadido el mapa para el juego asi como modificado el codigo para que siga al jugadpor por todo el mapa la camara (por arreglar las esquinas)">
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/paredes/muro1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/paredes/muro2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/paredes/muro3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/paredes/muro4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/paredes/muro5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/paredes/muro6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/objetos/cofreAbierto.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/objetos/cofreNuevo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/objetos/puerta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/objetos/puerta_Abierta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapas/MapaAvanzado.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objetos/Puerta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2024_9_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2024_9_36__Changes_.xml" afterDir="false" />
+    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Cambiados los sprites de imagenes y cambiado metodo para contar sprites">
+      <change afterPath="$PROJECT_DIR$/imagenes/sonidos/Hades-No-Escape.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imagenes/sonidos/unlock.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sonido/Sonido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagenes/tiles/darkWall.png" beforeDir="false" afterPath="$PROJECT_DIR$/imagenes/casillas/darkWall.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagenes/tiles/marble_floor1.png" beforeDir="false" afterPath="$PROJECT_DIR$/imagenes/casillas/marble_floor1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imagenes/tiles/marble_wall1.png" beforeDir="false" afterPath="$PROJECT_DIR$/imagenes/casillas/marble_wall1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/TipoObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/TipoObjetos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GestorColisiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorColisiones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GestorObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorObjetos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/PanelJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/PanelJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objetos/Cofre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Cofre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objetos/LLave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Llave.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -73,19 +47,23 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.Main.executor": "Run",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/imagenes/objetos"
+    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/sonidos",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\sonidos" />
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\caballero" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\objetos" />
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\casillas\suelo" />
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\casillas" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\tiles" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador\izquierda" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\casillas\paredes" />
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\sonidos" />
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\recursos" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador\Adelante" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador" />
     </key>
@@ -160,7 +138,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716134078910</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Creados objetos cofre y llave junto con la clase gestora y SuperObjeto">
+      <option name="closed" value="true" />
+      <created>1716206011706</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716206011706</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Cambiados los sprites de imagenes y cambiado metodo para contar sprites">
+      <option name="closed" value="true" />
+      <created>1716375979833</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716375979833</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +175,8 @@
     <MESSAGE value="Cambiado los sprites e incluido la animacion hacia la izquierda" />
     <MESSAGE value="Añadida la clase Casilla y su gestor Correspondiente, ademas de añadido dos sprites para las casillas" />
     <MESSAGE value="Añadido el mapa para el juego asi como modificado el codigo para que siga al jugadpor por todo el mapa la camara (por arreglar las esquinas)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido el mapa para el juego asi como modificado el codigo para que siga al jugadpor por todo el mapa la camara (por arreglar las esquinas)" />
+    <MESSAGE value="Creados objetos cofre y llave junto con la clase gestora y SuperObjeto" />
+    <MESSAGE value="Cambiados los sprites de imagenes y cambiado metodo para contar sprites" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiados los sprites de imagenes y cambiado metodo para contar sprites" />
   </component>
 </project>

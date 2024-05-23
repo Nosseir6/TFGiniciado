@@ -3,6 +3,7 @@ package main;
 import casilla.GestorCasillas;
 import entidades.Jugador;
 import objetos.SuperObjeto;
+import sonido.Sonido;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,8 +24,6 @@ public class PanelJuego extends JPanel implements Runnable {
     //Dimensiones del juego
     public final int maxJuegoFila = 40;
     public final int maxJuegoColumna = 20;
-    public final int anchoMundo = maxJuegoColumna * dimensionCasillas;
-    public final int altoMundo = maxJuegoFila * dimensionCasillas;
 
     //FPS
     int fps = 60;
@@ -37,6 +36,7 @@ public class PanelJuego extends JPanel implements Runnable {
     GestorTeclado gestTec = new GestorTeclado();
     GestorObjetos gestObj = new GestorObjetos(this);
     Thread gameThread;
+    Sonido sonido = new Sonido();
     public Jugador jugador = new Jugador(this,gestTec);
     public SuperObjeto[] objetos = new SuperObjeto[10];
 
@@ -54,6 +54,7 @@ public class PanelJuego extends JPanel implements Runnable {
     public void setUpJuego()
     {
         gestObj.setObjeto();
+        playMusica(0);
     }
 
     public void startGameThread() {
@@ -114,5 +115,24 @@ public class PanelJuego extends JPanel implements Runnable {
         jugador.draw(g2);
 
         g2.dispose();
+    }
+
+    public void playMusica(int i) {
+        sonido.setFile(i);
+        sonido.setVolume(0.25f); // Ajusta el volumen al 50%
+        sonido.play();
+        sonido.loop();
+    }
+
+
+    public void stopMusic()
+    {
+        sonido.stop();
+    }
+
+    public void playEfectos(int i)
+    {
+        sonido.setFile(i);
+        sonido.play();
     }
 }
