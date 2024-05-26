@@ -7,6 +7,8 @@ import java.io.IOException;
 
 public class Puerta extends SuperObjeto
 {
+    public boolean abierta;
+
     public Puerta()
     {
         nombre = TipoObjetos.PUERTA;
@@ -18,5 +20,7 @@ public class Puerta extends SuperObjeto
             System.out.println("No se ha encontrado la imagen de la puerta");
         }
         colision = true;
+        abierta = false;
     }
+
 }

@@ -31,6 +31,7 @@ public class PanelJuego extends JPanel implements Runnable {
     int playerY = 100;
     int playerSpeed = 4;
 
+    public InterfazUsuario iu = new InterfazUsuario(this);
     public GestorColisiones gestColisiones = new GestorColisiones(this);
     GestorCasillas gestCasillas = new GestorCasillas(this);
     GestorTeclado gestTec = new GestorTeclado();
@@ -38,7 +39,7 @@ public class PanelJuego extends JPanel implements Runnable {
     Thread gameThread;
     Sonido sonido = new Sonido();
     public Jugador jugador = new Jugador(this,gestTec);
-    public SuperObjeto[] objetos = new SuperObjeto[10];
+    public SuperObjeto[] objetos = new SuperObjeto[15];
 
 
     //Constructor
@@ -88,7 +89,7 @@ public class PanelJuego extends JPanel implements Runnable {
 
     /*Problema con el ajuste de los fps, al incrementar los fps la velocidad varia lo cual es un error ya que la
     velocidad a la que se muevee un jugador deberia ser independiente de los fps para ellos hay que usar la variable
-    delta del metodo run ya que ella es la que se encarga de */
+    delta del metodo run ya que ella es la que se encarga de eso*/
     public void update()
     {
         //ACTUALIZAR JUGADOR
@@ -113,6 +114,9 @@ public class PanelJuego extends JPanel implements Runnable {
 
         //DIBUJAR JUGADOR
         jugador.draw(g2);
+
+        //DIBUJAR INTERFAZ USUARIO
+        iu.draw(g2);
 
         g2.dispose();
     }

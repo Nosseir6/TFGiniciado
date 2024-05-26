@@ -13,25 +13,31 @@ public class Sonido {
     }
 
     public void setFile(int i) {
-        if (i < 0 || i >= sonidos.length || sonidos[i] == null) {
+        if (i < 0 || i >= sonidos.length || sonidos[i] == null)
+        {
             System.err.println("El índice del sonido no es válido o el sonido no está asignado.");
             return;
         }
 
-        try (AudioInputStream ai = AudioSystem.getAudioInputStream(sonidos[i])) {
+        try (AudioInputStream ai = AudioSystem.getAudioInputStream(sonidos[i]))
+        {
             if (clip != null)
             {
                 clip.close();
             }
             clip = AudioSystem.getClip();
             clip.open(ai);
-        } catch (UnsupportedAudioFileException e) {
+        } catch (UnsupportedAudioFileException e)
+        {
             System.err.println("El formato del archivo de audio no es compatible: " + e.getMessage());
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             System.err.println("Error al leer el archivo de audio: " + e.getMessage());
-        } catch (LineUnavailableException e) {
+        } catch (LineUnavailableException e)
+        {
             System.err.println("Línea de audio no disponible: " + e.getMessage());
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             System.err.println("Error desconocido: " + e.getMessage());
         }
     }

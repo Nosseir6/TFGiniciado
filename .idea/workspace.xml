@@ -4,12 +4,81 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Cambiados los sprites de imagenes y cambiado metodo para contar sprites">
-      <change afterPath="$PROJECT_DIR$/imagenes/sonidos/Hades-No-Escape.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/imagenes/sonidos/unlock.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sonido/Sonido.java" afterDir="false" />
+    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="cambiado el mapa, algunas texturas y añadido otras. Asi como la interaccion de los objetos con el jugador">
+      <change afterPath="$PROJECT_DIR$/src/main/InterfazUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TFG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TFG.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Abajo/Caballero1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Abajo/Caballero2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero3.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Abajo/Caballero3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero4.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Abajo/Caballero4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero5.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Abajo/Caballero5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero6.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Abajo/Caballero6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Abajo/Caballero7.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Abajo/Caballero7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Abajo/WarriorDownWalk.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Abajo/WarriorDownWalk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Arriba/Arriba1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Arriba/Arriba2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba3.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Arriba/Arriba3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba4.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Arriba/Arriba4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba5.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Arriba/Arriba5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba6.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Arriba/Arriba6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Arriba/Arriba7.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Arriba/Arriba7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Arriba/WarriorUpWalk.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Arriba/WarriorUpWalk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Derecha/Derecha1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Derecha/Derecha2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha3.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Derecha/Derecha3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha4.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Derecha/Derecha4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha5.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Derecha/Derecha5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha6.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Derecha/Derecha6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Derecha/Derecha7.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Derecha/Derecha7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Derecha/WarriorRightWalk.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Derecha/WarriorRightWalk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Izquierda/Izquierda1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Izquierda/Izquierda2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda3.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Izquierda/Izquierda3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda4.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Izquierda/Izquierda4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda5.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Izquierda/Izquierda5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda6.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Izquierda/Izquierda6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Izquierda/Izquierda7.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Izquierda/Izquierda7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/caballero/Izquierda/WarriorLeftWalk.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/caballero/Izquierda/WarriorLeftWalk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/darkWall.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/darkWall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/marble_floor1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/marble_floor1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/marble_wall1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/marble_wall1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/paredes/muro1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/paredes/muro1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/paredes/muro2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/paredes/muro2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/paredes/muro3.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/paredes/muro3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/paredes/muro4.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/paredes/muro4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/paredes/muro5.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/paredes/muro5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/paredes/muro6.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/paredes/muro6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo0.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/suelo/suelo0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/suelo/suelo1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/suelo/suelo2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo3.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/suelo/suelo3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo4.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/suelo/suelo4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo5.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/suelo/suelo5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/casillas/suelo/suelo6.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/casillas/suelo/suelo6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/adelante/Frontal.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/jugador/adelante/Frontal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/adelante/MovimientoAdelante1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/jugador/adelante/MovimientoAdelante1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/adelante/MovimientoAdelante2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/jugador/adelante/MovimientoAdelante2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/adelante/MovimientoAdelante3.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/jugador/adelante/MovimientoAdelante3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/adelante/MovimientoAdelante4.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/jugador/adelante/MovimientoAdelante4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/atras/Espalda.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/jugador/atras/Espalda.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/derecha/Derecha.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/jugador/derecha/Derecha.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/izquierda/Izquierda.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/jugador/izquierda/Izquierda.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/izquierda/MovimientoIzq1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/jugador/izquierda/MovimientoIzq1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/jugador/izquierda/MovimientoIzq2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/jugador/izquierda/MovimientoIzq2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/objetos/cofre.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/objetos/cofre.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/objetos/cofreAbierto.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/objetos/cofreAbierto.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/objetos/cofreNuevo.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/objetos/cofreNuevo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/objetos/llave.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/objetos/llave.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/objetos/puerta.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/objetos/puerta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/objetos/puerta_Abierta.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/objetos/puertaAbierta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/sonidos/Hades-No-Escape.wav" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sonidos/Hades-No-Escape.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes/sonidos/unlock.wav" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sonidos/unlock.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entidades/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GestorObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorObjetos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/PanelJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/PanelJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Puerta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Puerta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sonido/Sonido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sonido/Sonido.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +89,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -45,25 +113,21 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Coverage",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/sonidos",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/imagenes/objetos"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\sonidos" />
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\caballero" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\objetos" />
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\casillas\suelo" />
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\casillas" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\tiles" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador\izquierda" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\sonidos" />
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\recursos" />
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\casillas\paredes" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador\Adelante" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador" />
     </key>
@@ -138,23 +202,7 @@
       <option name="project" value="LOCAL" />
       <updated>1716134078910</updated>
     </task>
-    <task id="LOCAL-00007" summary="Creados objetos cofre y llave junto con la clase gestora y SuperObjeto">
-      <option name="closed" value="true" />
-      <created>1716206011706</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1716206011706</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Cambiados los sprites de imagenes y cambiado metodo para contar sprites">
-      <option name="closed" value="true" />
-      <created>1716375979833</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1716375979833</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,8 +223,9 @@
     <MESSAGE value="Cambiado los sprites e incluido la animacion hacia la izquierda" />
     <MESSAGE value="Añadida la clase Casilla y su gestor Correspondiente, ademas de añadido dos sprites para las casillas" />
     <MESSAGE value="Añadido el mapa para el juego asi como modificado el codigo para que siga al jugadpor por todo el mapa la camara (por arreglar las esquinas)" />
-    <MESSAGE value="Creados objetos cofre y llave junto con la clase gestora y SuperObjeto" />
-    <MESSAGE value="Cambiados los sprites de imagenes y cambiado metodo para contar sprites" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiados los sprites de imagenes y cambiado metodo para contar sprites" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadido el mapa para el juego asi como modificado el codigo para que siga al jugadpor por todo el mapa la camara (por arreglar las esquinas)" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TFGiniciado$Main.ic" NAME="Main Coverage Results" MODIFIED="1716721508582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

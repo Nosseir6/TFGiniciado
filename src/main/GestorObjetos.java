@@ -31,16 +31,25 @@ public class GestorObjetos
         pJuego.objetos[4] = new Llave();
         pJuego.objetos[4].posMundoX =  8 *pJuego.dimensionCasillas;
         pJuego.objetos[4].posMundoY = 20 * pJuego.dimensionCasillas;
+        pJuego.objetos[5] = new Llave();
+        pJuego.objetos[5].posMundoX =  2 *pJuego.dimensionCasillas;
+        pJuego.objetos[5].posMundoY = 27 * pJuego.dimensionCasillas;
+        pJuego.objetos[6] = new Llave();
+        pJuego.objetos[6].posMundoX = 9 *pJuego.dimensionCasillas;
+        pJuego.objetos[6].posMundoY = 1 * pJuego.dimensionCasillas;
+        pJuego.objetos[7] = new Llave();
+        pJuego.objetos[7].posMundoX =  3 *pJuego.dimensionCasillas;
+        pJuego.objetos[7].posMundoY = 23 * pJuego.dimensionCasillas;
         //PUERTAS
-        pJuego.objetos[5] = new Puerta();
-        pJuego.objetos[5].posMundoX = 9 * pJuego.dimensionCasillas;
-        pJuego.objetos[5].posMundoY = 14 * pJuego.dimensionCasillas;
-        pJuego.objetos[5] = new Puerta();
-        pJuego.objetos[5].posMundoX = 9 * pJuego.dimensionCasillas;
-        pJuego.objetos[5].posMundoY = 28 * pJuego.dimensionCasillas;
-        pJuego.objetos[6] = new Puerta();
-        pJuego.objetos[6].posMundoX = 16 * pJuego.dimensionCasillas;
-        pJuego.objetos[6].posMundoY = 18 * pJuego.dimensionCasillas;
+        pJuego.objetos[8] = new Puerta();
+        pJuego.objetos[8].posMundoX = 9 * pJuego.dimensionCasillas;
+        pJuego.objetos[8].posMundoY = 14 * pJuego.dimensionCasillas;
+        pJuego.objetos[9] = new Puerta();
+        pJuego.objetos[9].posMundoX = 9 * pJuego.dimensionCasillas;
+        pJuego.objetos[9].posMundoY = 28 * pJuego.dimensionCasillas;
+        pJuego.objetos[10] = new Puerta();
+        pJuego.objetos[10].posMundoX = 16 * pJuego.dimensionCasillas;
+        pJuego.objetos[10].posMundoY = 18 * pJuego.dimensionCasillas;
 
     }
 }

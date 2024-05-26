@@ -5,6 +5,7 @@ import interfaces.TipoObjetos;
 import main.GestorTeclado;
 import main.PanelJuego;
 import objetos.Cofre;
+import objetos.Puerta;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -20,13 +21,13 @@ public class Jugador extends SuperEntidad
     public final int posXPantalla;
     public final int posYPantalla;
 
-    private int numLlaves = 0;
+    public int numLlaves = 0;
     public Jugador (PanelJuego pJuego, GestorTeclado gestTec)
     {
         this.pJuego = pJuego;
         this.gestTec = gestTec;
 
-        posXPantalla = pJuego.anchoPantalla/2 - (pJuego.dimensionCasillas);
+        posXPantalla = pJuego.anchoPantalla/2 - (pJuego.dimensionCasillas/2);
         posYPantalla = pJuego.altoPantalla/2 - (pJuego.dimensionCasillas/2);
 
         hitBox = new Rectangle();
@@ -45,8 +46,8 @@ public class Jugador extends SuperEntidad
 
     public void setValoresPorDefecto()
     {
-        posMundoX = 500;
-        posMundoY = 100;
+        posMundoX = 607;
+        posMundoY = 450;
         velocidad = 3;
         direccion = Direcciones.ABAJO; //ASIGNACION DE VALOR POR DEFECTO PARA SABER COMO SE VA APARECER DIBUAJADO EL PERSONAJE LA PRIMERA VEZ
     }
@@ -92,7 +93,7 @@ public class Jugador extends SuperEntidad
             izq6 = ImageIO.read(getClass().getResourceAsStream("/caballero/Izquierda/Izquierda7.png"));
         }catch (IOException e)
         {
-            System.out.println("Error al acceder a la imagenes");
+            System.err.println("Error al acceder a la imagenes");
             e.printStackTrace();
         }
 
@@ -170,48 +171,50 @@ public class Jugador extends SuperEntidad
                 case LLAVE -> {
                     pJuego.objetos[i] = null;
                     numLlaves++;
-                    System.out.println("Tienes "+numLlaves+" llaves");
+                    pJuego.iu.showMensaje("Obetenida una llave");
                 }
                 case COFRE -> {
-                    if (pJuego.objetos[i] instanceof Cofre)
+                    if (((Cofre) pJuego.objetos[i]).abierto)
                     {
-                        if (((Cofre) pJuego.objetos[i]).abierto)
+                        pJuego.iu.showMensaje("El cofre esta vacio");
+                    }
+                    else
+                    {
+                        if (numLlaves > 0)
                         {
-                            System.out.println("El cofre esta vacio");
-                        }
-                        else
-                        {
-                            if (numLlaves > 0)
-                            {
-                                try {
-                                    pJuego.objetos[i].imagen = ImageIO.read(getClass().getResourceAsStream("/objetos/cofreAbierto.png"));
-                                }catch (IOException e)
-                                {
-                                    System.out.println("No se encontro la imagen del cofre abierto");
-                                    e.printStackTrace();
-                                }
-                                numLlaves--;
-                                ((Cofre) pJuego.objetos[i]).abierto = true;
-                                System.out.println("Tienes "+numLlaves+" llaves");
+                            try {
+                                pJuego.objetos[i].imagen = ImageIO.read(getClass().getResourceAsStream("/objetos/cofreAbierto.png"));
+                            } catch (IOException e) {
+                                System.err.println("No se encontro la imagen del cofre abierto");
+                                e.printStackTrace();
                             }
+                            numLlaves--;
+                            ((Cofre) pJuego.objetos[i]).abierto = true;
+                            System.out.println("Tienes " + numLlaves + " llaves");
                         }
                     }
                 }
                 case PUERTA -> {
-                    if (numLlaves > 0 )
+                    if (((Puerta) pJuego.objetos[i]).abierta)
                     {
-                        try {
-                            pJuego.objetos[i].imagen = ImageIO.read(getClass().getResourceAsStream("/objetos/puerta_Abierta.png"));
-                        }catch (IOException e)
-                        {
-                            System.out.println("Imagen de la puerta no encontrada");
-                            e.printStackTrace();
-                        }
                         pJuego.objetos[i].colision = false;
-                        numLlaves--;
-                        System.out.println("Tienes "+numLlaves+" llaves");
-
                     }
+                    else
+                    {
+                        if (numLlaves > 0) {
+                            try {
+                                pJuego.objetos[i].imagen = ImageIO.read(getClass().getResourceAsStream("/objetos/puertaAbierta.png"));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                                System.err.println("No se encuentra la imagen de la puerta");
+                            }
+                            numLlaves--;
+                            ((Puerta) pJuego.objetos[i]).abierta = true;
+                            pJuego.iu.showMensaje("Puerta abierta");
+                        }
+                    }
+
+
                 }
             }
         }
