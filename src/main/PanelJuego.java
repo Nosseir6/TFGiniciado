@@ -46,7 +46,7 @@ public class PanelJuego extends JPanel implements Runnable {
     public Jugador jugador = new Jugador(this, gestTec);
     public SuperObjeto[] objetos = new SuperObjeto[15];
     public Entidad[] npcs = new Entidad[10];
-    public Entidad[] monstruos = new Entidad[10];
+    public Entidad[] monstruos = new Entidad[30];
     public int contadorMensajeInicio = 0;
 
     // Constructor

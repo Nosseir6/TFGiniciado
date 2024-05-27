@@ -77,10 +77,10 @@ public class InterfazUsuario {
     public void setDialogo() {
         dialogo[0] = "Hola aventurero, bienvenido a la mazmorra.";
         dialogo[1] = "Para completarla has de llegar al altar al final de la misma,";
-        dialogo[2] = "puedes elegir si luchar o correr, la elección es tuya.";
-        dialogo[3] = "Ten cuidado si decides luchar pues hay poderosos enemigos.";
-        dialogo[4] = "Arma te de valor y suerte en tu aventura";
-        dialogo[5] = "QUE LA LUZ TE GUIE";
+        dialogo[2] = "evita que los enemigos te toquen para no morir.";
+        dialogo[3] = "Cuidado si recibes mucho daño el juego terminara.";
+        dialogo[4] = "Armate de valor y suerte en tu aventura";
+        dialogo[5] = "DISFRUTA DE TU AVENTURA";
     }
 
     /**
