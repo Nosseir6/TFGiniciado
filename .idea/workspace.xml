@@ -4,42 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Perofeccionado clase de entidades y iniciado el apartado del Slime">
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Abajo/Abajo1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Abajo/Abajo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Abajo/Abajo3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Abajo/Abajo4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Abajo/Abajo5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Arriba/Arriba1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Arriba/Arriba2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Arriba/Arriba3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Arriba/Arriba4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Arriba/Arriba5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Derecha/Derecha1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Derecha/Derecha2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Derecha/Derecha3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Derecha/Derecha4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Derecha/Derecha5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Izquierda/Izquierda1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Izquierda/Izquierda2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Izquierda/Izquierda3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Izquierda/Izquierda4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Izquierda/Izquierda5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sonidos/Muerte.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entidades/EsqueletoNPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2024_9_36_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2024_9_36__Changes_.xml" beforeDir="false" />
+    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Creado los enemigos y diseñado el juego para que acabe si el jugador se queda sin vida">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/casillas/darkWall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/casillas/marble_floor1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/casillas/marble_wall1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/casilla/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/casilla/Casilla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entidades/Entidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Entidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entidades/Esqueleto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Esqueleto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entidades/EsqueletoNPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/EsqueletoNPC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Esqueleto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Entidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GestorColisiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorColisiones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GestorObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorEntidades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GestorEntidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorEntidades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GestorTeclado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorTeclado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/InterfazUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/InterfazUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/PanelJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/PanelJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Altar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Altar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Cofre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Cofre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Corazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Corazon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Llave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Llave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Puerta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Puerta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/SuperObjeto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/SuperObjeto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sonido/Sonido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sonido/Sonido.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716819788587</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Creado los enemigos y diseñado el juego para que acabe si el jugador se queda sin vida">
+      <option name="closed" value="true" />
+      <created>1716839689979</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716839689979</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,7 +217,8 @@
     <MESSAGE value="Creado el altar que acaba el juego asi como el mensaje inicial" />
     <MESSAGE value="Actualizado metodo de dibujo para una mejora de eficiencia (no se para que lo hago)" />
     <MESSAGE value="Perofeccionado clase de entidades y iniciado el apartado del Slime" />
-    <option name="LAST_COMMIT_MESSAGE" value="Perofeccionado clase de entidades y iniciado el apartado del Slime" />
+    <MESSAGE value="Creado los enemigos y diseñado el juego para que acabe si el jugador se queda sin vida" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creado los enemigos y diseñado el juego para que acabe si el jugador se queda sin vida" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TFGiniciado$Main.ic" NAME="Main Coverage Results" MODIFIED="1716721508582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

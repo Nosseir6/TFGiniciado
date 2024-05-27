@@ -6,20 +6,25 @@ import main.PanelJuego;
 import java.awt.*;
 import java.util.Random;
 
-public class Esqueleto extends Entidad
-{
+/**
+ * La clase Esqueleto representa un enemigo del tipo esqueleto en el juego.
+ * Hereda de la clase Entidad y define comportamientos específicos para el esqueleto.
+ */
+public class Esqueleto extends Entidad {
     public String nombre;
 
-
-    public Esqueleto(PanelJuego pJuego)
-    {
+    /**
+     * Constructor para la clase Esqueleto.
+     * @param pJuego La referencia al objeto PanelJuego que contiene la configuración del juego.
+     */
+    public Esqueleto(PanelJuego pJuego) {
         super(pJuego);
         nombre = "slime";
         velocidad = 1;
         vidaMax = 4;
         vida = vidaMax;
 
-        hitBox = new Rectangle(15,4,24,52);
+        hitBox = new Rectangle(15, 4, 24, 52);
         direccion = Direcciones.ABAJO;
         hitbox_XPorDefecto = hitBox.x;
         hitbox_YPorDefecto = hitBox.y;
@@ -27,9 +32,11 @@ public class Esqueleto extends Entidad
         getImagen();
     }
 
-    public void getImagen()
-    {
-        //ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA ABAJO
+    /**
+     * Carga las imágenes de los diferentes sprites para las animaciones del esqueleto.
+     */
+    public void getImagen() {
+        // ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA ABAJO
         imagenAbajo = setup("/esqueleto/Abajo/Abajo1.png");
         abajo1 = setup("/esqueleto/Abajo/Abajo1.png");
         abajo2 = setup("/esqueleto/Abajo/Abajo2.png");
@@ -38,16 +45,16 @@ public class Esqueleto extends Entidad
         abajo5 = setup("/esqueleto/Abajo/Abajo4.png");
         abajo6 = setup("/esqueleto/Abajo/Abajo5.png");
 
-        //ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA ARRIBA
+        // ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA ARRIBA
         imagenArriba = setup("/esqueleto/Arriba/Arriba1.png");
-        arriba1=setup("/esqueleto/Arriba/Arriba1.png");
-        arriba2=setup("/esqueleto/Arriba/Arriba2.png");
-        arriba3=setup("/esqueleto/Arriba/Arriba3.png");
-        arriba4=setup("/esqueleto/Arriba/Arriba1.png");
-        arriba5=setup("/esqueleto/Arriba/Arriba4.png");
-        arriba6=setup("/esqueleto/Arriba/Arriba5.png");
+        arriba1 = setup("/esqueleto/Arriba/Arriba1.png");
+        arriba2 = setup("/esqueleto/Arriba/Arriba2.png");
+        arriba3 = setup("/esqueleto/Arriba/Arriba3.png");
+        arriba4 = setup("/esqueleto/Arriba/Arriba1.png");
+        arriba5 = setup("/esqueleto/Arriba/Arriba4.png");
+        arriba6 = setup("/esqueleto/Arriba/Arriba5.png");
 
-        //ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA LA DERECHA
+        // ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA LA DERECHA
         imagenDrch = setup("/esqueleto/Derecha/Derecha1.png");
         drch1 = setup("/esqueleto/Derecha/Derecha1.png");
         drch2 = setup("/esqueleto/Derecha/Derecha2.png");
@@ -56,7 +63,7 @@ public class Esqueleto extends Entidad
         drch5 = setup("/esqueleto/Derecha/Derecha4.png");
         drch6 = setup("/esqueleto/Derecha/Derecha5.png");
 
-        //ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA LA IZQUIERDA
+        // ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA LA IZQUIERDA
         imagenIzq = setup("/esqueleto/Izquierda/Izquierda1.png");
         izq1 = setup("/esqueleto/Izquierda/Izquierda1.png");
         izq2 = setup("/esqueleto/Izquierda/Izquierda2.png");
@@ -66,28 +73,23 @@ public class Esqueleto extends Entidad
         izq6 = setup("/esqueleto/Izquierda/Izquierda5.png");
     }
 
-    public void setAccion()
-    {
+    /**
+     * Establece la acción del esqueleto de manera aleatoria cada cierto tiempo.
+     * La dirección se elige aleatoriamente entre ARRIBA, ABAJO, IZQUIERDA y DERECHA.
+     */
+    public void setAccion() {
         contadorAcciones++;
-        if (contadorAcciones == 120)
-        {
+        if (contadorAcciones == 120) {
             Random random = new Random();
-            int i = random.nextInt(100)+1;
+            int i = random.nextInt(100) + 1;
 
-            if (i <= 25)
-            {
+            if (i <= 25) {
                 direccion = Direcciones.ARRIBA;
-            }
-            if (i > 25 && i <= 50)
-            {
+            } else if (i > 25 && i <= 50) {
                 direccion = Direcciones.ABAJO;
-            }
-            if (i > 50 && i <= 75)
-            {
+            } else if (i > 50 && i <= 75) {
                 direccion = Direcciones.IZQUIERDA;
-            }
-            if (i > 75 && i <= 100)
-            {
+            } else if (i > 75 && i <= 100) {
                 direccion = Direcciones.DERECHA;
             }
             contadorAcciones = 0;

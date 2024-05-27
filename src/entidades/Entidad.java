@@ -9,6 +9,10 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
+/**
+ * La clase Entidad representa una entidad en el juego, que puede ser un jugador, un NPC, un monstruo, etc.
+ * Gestiona la posición, la velocidad, las imágenes de la entidad, así como la lógica de movimiento y colisión.
+ */
 public class Entidad {
 
     PanelJuego pJuego;
@@ -37,16 +41,23 @@ public class Entidad {
     public boolean invencibilidad = false;
     public int contInven = 0;
 
-    public Entidad(PanelJuego pJuego)
-    {
+    /**
+     * Constructor para la clase Entidad.
+     * @param pJuego La referencia al objeto PanelJuego que contiene la configuración del juego.
+     */
+    public Entidad(PanelJuego pJuego) {
         this.pJuego = pJuego;
     }
-    public void draw(Graphics2D g2)
-    {
-        int xPantalla = posMundoX - pJuego.jugador.posMundoX + pJuego.jugador.posXPantalla; //parte de la pantalla en la que lo dibujamos, se suma la posicion de la pantalla para compensar la diferencia en caso de las esquinas
+
+    /**
+     * Dibuja la entidad en la pantalla.
+     * @param g2 El objeto Graphics2D utilizado para dibujar.
+     */
+    public void draw(Graphics2D g2) {
+        int xPantalla = posMundoX - pJuego.jugador.posMundoX + pJuego.jugador.posXPantalla;
         int yPantalla = posMundoY - pJuego.jugador.posMundoY + pJuego.jugador.posYPantalla;
 
-            BufferedImage[] imagenesArriba = {imagenArriba, arriba1, arriba2, arriba3, arriba4, arriba5, arriba6};
+        BufferedImage[] imagenesArriba = {imagenArriba, arriba1, arriba2, arriba3, arriba4, arriba5, arriba6};
         BufferedImage[] imagenesAbajo = {imagenAbajo, abajo1, abajo2, abajo3, abajo4, abajo5, abajo6};
         BufferedImage[] imagenesIzquierda = {imagenIzq, izq1, izq2, izq3, izq4, izq5, izq6};
         BufferedImage[] imagenesDerecha = {imagenDrch, drch1, drch2, drch3, drch4, drch5, drch6};
@@ -54,30 +65,36 @@ public class Entidad {
         if ((posMundoX + pJuego.dimensionCasillas > pJuego.jugador.posMundoX - pJuego.jugador.posXPantalla) ||
                 (posMundoX - pJuego.dimensionCasillas < pJuego.jugador.posMundoX + pJuego.jugador.posXPantalla) ||
                 (posMundoY + pJuego.dimensionCasillas > pJuego.jugador.posMundoY - pJuego.jugador.posYPantalla) ||
-                (posMundoY - pJuego.dimensionCasillas < pJuego.jugador.posMundoY + pJuego.jugador.posYPantalla))
-        {
+                (posMundoY - pJuego.dimensionCasillas < pJuego.jugador.posMundoY + pJuego.jugador.posYPantalla)) {
+
             BufferedImage imagen = null;
 
-            switch (direccion)
-            {
+            switch (direccion) {
                 case ABAJO -> imagen = imagenesAbajo[spriteNum];
                 case ARRIBA -> imagen = imagenesArriba[spriteNum];
                 case IZQUIERDA -> imagen = imagenesIzquierda[spriteNum];
                 case DERECHA -> imagen = imagenesDerecha[spriteNum];
             }
 
-
             g2.drawImage(imagen, xPantalla, yPantalla, pJuego.dimensionCasillas, pJuego.dimensionCasillas, null);
         }
     }
 
-    public void setAccion(){}
-    public void update(){
+    /**
+     * Configura la acción de la entidad.
+     * Este método debe ser sobrescrito por subclases para definir acciones específicas.
+     */
+    public void setAccion() {}
+
+    /**
+     * Actualiza el estado de la entidad, incluyendo el movimiento y la detección de colisiones.
+     */
+    public void update() {
         setAccion();
 
         hayColision = false;
         pJuego.gestColisiones.comprobarCasilla(this);
-        pJuego.gestColisiones.colisionObjetos(this,false);
+        pJuego.gestColisiones.colisionObjetos(this, false);
         pJuego.gestColisiones.comprobarEntidad(this, pJuego.monstruos);
         pJuego.gestColisiones.comprobarEntidad(this, pJuego.npcs);
         pJuego.gestColisiones.comprobarJugador(this);
@@ -90,10 +107,10 @@ public class Entidad {
 
         if (!hayColision) {
             switch (direccion) {
-                case ARRIBA -> posMundoY -= velocidad; // Multiplicar por tiempoDelta
-                case ABAJO -> posMundoY += velocidad; // Multiplicar por tiempoDelta
-                case DERECHA -> posMundoX += velocidad; // Multiplicar por tiempoDelta
-                case IZQUIERDA -> posMundoX -= velocidad; // Multiplicar por tiempoDelta
+                case ARRIBA -> posMundoY -= velocidad;
+                case ABAJO -> posMundoY += velocidad;
+                case DERECHA -> posMundoX += velocidad;
+                case IZQUIERDA -> posMundoX -= velocidad;
             }
         } else {
             spriteNum = 0;
@@ -101,16 +118,19 @@ public class Entidad {
         }
     }
 
-    public BufferedImage setup(String rutaImagen)
-    {
+    /**
+     * Configura una imagen de una entidad a partir de una ruta de imagen.
+     * @param rutaImagen La ruta de la imagen.
+     * @return La imagen configurada y escalada.
+     */
+    public BufferedImage setup(String rutaImagen) {
         Util util = new Util();
         BufferedImage imagen = null;
 
         try {
             imagen = ImageIO.read(getClass().getResourceAsStream(rutaImagen));
             imagen = util.escalada(imagen, pJuego.dimensionCasillas, pJuego.dimensionCasillas);
-        }catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return imagen;

@@ -4,16 +4,30 @@ import javax.sound.sampled.*;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ * La clase Sonido permite la reproducción de archivos de audio en el juego.
+ */
 public class Sonido {
+    /** El clip de audio para reproducir el sonido. */
     Clip clip;
+
+    /** Arreglo de URLs que almacena las ubicaciones de los archivos de sonido. */
     URL[] sonidos = new URL[30];
 
+    /**
+     * Constructor de la clase Sonido.
+     * Inicializa las ubicaciones de los archivos de sonido.
+     */
     public Sonido() {
         sonidos[0] = getClass().getResource("/sonidos/Hades-No-Escape.wav");
         sonidos[1] = getClass().getResource("/sonidos/LevelFinish.wav");
         sonidos[2] = getClass().getResource("/sonidos/Muerte.wav");
     }
 
+    /**
+     * Establece el archivo de audio a reproducir.
+     * @param i El índice del archivo de sonido en el arreglo de URLs.
+     */
     public void setFile(int i) {
         if (i < 0 || i >= sonidos.length || sonidos[i] == null)
         {
@@ -44,6 +58,7 @@ public class Sonido {
         }
     }
 
+    /** Reproduce el sonido. */
     public void play() {
         if (clip != null)
         {
@@ -55,6 +70,7 @@ public class Sonido {
         }
     }
 
+    /** Reproduce el sonido en un bucle continuo. */
     public void loop() {
         if (clip != null)
         {
@@ -66,6 +82,7 @@ public class Sonido {
         }
     }
 
+    /** Detiene la reproducción del sonido. */
     public void stop() {
         if (clip != null)
         {
@@ -77,6 +94,10 @@ public class Sonido {
         }
     }
 
+    /**
+     * Establece el volumen del sonido.
+     * @param volume El volumen del sonido en un rango de 0.0 a 1.0.
+     */
     public void setVolume(float volume) {
         if (clip != null)
         {
