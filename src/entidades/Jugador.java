@@ -16,7 +16,6 @@ import java.io.IOException;
 public class Jugador extends SuperEntidad
 {
 
-    PanelJuego pJuego;
     GestorTeclado gestTec;
 
     public final int posXPantalla;
@@ -29,7 +28,7 @@ public class Jugador extends SuperEntidad
 
     public Jugador (PanelJuego pJuego, GestorTeclado gestTec)
     {
-        this.pJuego = pJuego;
+        super(pJuego);
         this.gestTec = gestTec;
 
         posXPantalla = pJuego.anchoPantalla/2 - (pJuego.dimensionCasillas/2);
@@ -101,21 +100,6 @@ public class Jugador extends SuperEntidad
 
     }
 
-    public BufferedImage setup(String rutaImagen)
-    {
-        Util util = new Util();
-        BufferedImage imagen = null;
-
-        try {
-            imagen = ImageIO.read(getClass().getResourceAsStream(rutaImagen));
-            imagen = util.escalada(imagen, pJuego.dimensionCasillas, pJuego.dimensionCasillas);
-        }catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-        return imagen;
-    }
-
 
     public void update() {
         if (gestTec.arribaPres || gestTec.abajoPres || gestTec.drchPres || gestTec.izqPres) {
@@ -142,6 +126,9 @@ public class Jugador extends SuperEntidad
             //COMPROBAR COLISION DE OBJETOS
             int indexObjeto = pJuego.gestColisiones.colisionObjetos(this,true);
             interactuarConObjetos(indexObjeto);
+
+            //COMPROBAR COLISION NPCS
+            int indexNPC = pJuego.gestColisiones.comprobarEntidad(this,pJuego.monstruos);
 
             //SI hayColision == false EL JUGADOR SE PUEDE MOVER
             if (!hayColision) {

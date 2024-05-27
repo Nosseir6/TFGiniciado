@@ -4,29 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Creado el altar que acaba el juego asi como el mensaje inicial">
-      <change afterPath="$PROJECT_DIR$/resources/enemigos/slime/Slime.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/enemigos/slime/Slime2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/objetos/corazon/corazonComp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/objetos/corazon/corazonVacio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/objetos/corazon/medioCor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entidades/Slime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objetos/Corazon.java" afterDir="false" />
+    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Actualizado metodo de dibujo para una mejora de eficiencia (no se para que lo hago)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/casilla/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/casilla/Casilla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entidades/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Slime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/TipoObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/TipoObjetos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GestorColisiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorColisiones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GestorObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorObjetos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/InterfazUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/InterfazUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/PanelJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/PanelJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objetos/Altar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Altar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objetos/Cofre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Cofre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objetos/Llave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Llave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objetos/Puerta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Puerta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objetos/SuperObjeto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/SuperObjeto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716798733610</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Actualizado metodo de dibujo para una mejora de eficiencia (no se para que lo hago)">
+      <option name="closed" value="true" />
+      <created>1716815954485</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716815954485</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,7 +183,8 @@
     <MESSAGE value="Añadido el mapa para el juego asi como modificado el codigo para que siga al jugadpor por todo el mapa la camara (por arreglar las esquinas)" />
     <MESSAGE value="Añadido clase interfaz usuario y modificado ruta de acceso a los archivos de imagenenes" />
     <MESSAGE value="Creado el altar que acaba el juego asi como el mensaje inicial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creado el altar que acaba el juego asi como el mensaje inicial" />
+    <MESSAGE value="Actualizado metodo de dibujo para una mejora de eficiencia (no se para que lo hago)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizado metodo de dibujo para una mejora de eficiencia (no se para que lo hago)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TFGiniciado$Main.ic" NAME="Main Coverage Results" MODIFIED="1716721508582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

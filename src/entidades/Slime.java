@@ -9,13 +9,12 @@ import java.util.Random;
 
 public class Slime extends SuperEntidad
 {
-    public PanelJuego pJuego;
     public String nombre;
 
 
-    public Slime()
+    public Slime(PanelJuego pJuego)
     {
-        this.pJuego = pJuego;
+        super(pJuego);
         nombre = "slime";
         velocidad = 1;
         vidaMax = 4;
@@ -34,20 +33,14 @@ public class Slime extends SuperEntidad
 
     public void getImagen()
     {
-        try {
-            arriba1 = ImageIO.read(getClass().getResourceAsStream("/enemigos/slime/Slime.png"));
-            arriba2 = ImageIO.read(getClass().getResourceAsStream("/enemigos/slime/Slime2.png"));
-            abajo1 = ImageIO.read(getClass().getResourceAsStream("/enemigos/slime/Slime.png"));
-            abajo2 = ImageIO.read(getClass().getResourceAsStream("/enemigos/slime/Slime2.png"));
-            izq1 = ImageIO.read(getClass().getResourceAsStream("/enemigos/slime/Slime.png"));
-            izq2 = ImageIO.read(getClass().getResourceAsStream("/enemigos/slime/Slime2.png"));
-            drch1 = ImageIO.read(getClass().getResourceAsStream("/enemigos/slime/Slime.png"));
-            drch2 = ImageIO.read(getClass().getResourceAsStream("/enemigos/slime/Slime2.png"));
-        }catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
+            arriba1 = setup("/enemigos/slime/Slime.png");
+            arriba2 = setup("/enemigos/slime/Slime2.png");
+            abajo1 = setup("/enemigos/slime/Slime.png");
+            abajo2 = setup("/enemigos/slime/Slime2.png");
+            izq1 = setup("/enemigos/slime/Slime.png");
+            izq2 = setup("/enemigos/slime/Slime2.png");
+            drch1 = setup("/enemigos/slime/Slime.png");
+            drch2 = setup("/enemigos/slime/Slime2.png");
     }
 
     public void setAccion()

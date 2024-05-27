@@ -61,7 +61,7 @@ public class GestorObjetos
 
     public void setMonstruo()
     {
-        pJuego.monstruos[0] = new objetos.SuperObjeto();
+        pJuego.monstruos[0] = new Slime(pJuego);
         pJuego.monstruos[0].posMundoX = pJuego.dimensionCasillas*5;
         pJuego.monstruos[0].posMundoY = pJuego.dimensionCasillas * 34;
     }

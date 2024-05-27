@@ -2,6 +2,7 @@ package main;
 
 import casilla.GestorCasillas;
 import entidades.Jugador;
+import entidades.SuperEntidad;
 import objetos.SuperObjeto;
 import sonido.Sonido;
 
@@ -41,7 +42,7 @@ public class PanelJuego extends JPanel implements Runnable {
     Sonido sonido = new Sonido();
     public Jugador jugador = new Jugador(this,gestTec);
     public SuperObjeto[] objetos = new SuperObjeto[15];
-    public SuperObjeto[] monstruos = new SuperObjeto[10];
+    public SuperEntidad[] monstruos = new SuperEntidad[10];
     public int contadorMensajeInicio = 0;
 
 
