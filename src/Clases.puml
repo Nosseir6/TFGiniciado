@@ -1,0 +1,148 @@
+@startuml
+
+class Jugador {
+    +int vida
+    +int vidaMax
+    +int numLlaves
+    +int posMundoX
+    +int posMundoY
+    +int posXPantalla
+    +int posYPantalla
+    +GestorTeclado gestTec
+    --
+    +Jugador(PanelJuego pJuego, GestorTeclado gestTec)
+    +void update()
+    +void draw(Graphics2D g2)
+}
+
+class Entidad {
+    +int vida
+    +int vidaMax
+    +int velocidad
+    +int posMundoX
+    +int posMundoY
+    +int posXPantalla
+    +int posYPantalla
+    --
+    +void update()
+    +void draw(Graphics2D g2)
+}
+
+class GestorEntidades {
+    +PanelJuego pJuego
+    --
+    +void setObjeto()
+    +void setNPC()
+    +void setMonstruo()
+}
+
+class GestorColisiones {
+    +PanelJuego pJuego
+    --
+    +void checkColisiones()
+}
+
+class GestorCasillas {
+    +PanelJuego pJuego
+    --
+    +void draw(Graphics2D g2)
+}
+
+class GestorTeclado {
+    +boolean arribaPres
+    +boolean izqPres
+    +boolean drchPres
+    +boolean abajoPres
+    --
+    +void keyPressed(KeyEvent e)
+    +void keyReleased(KeyEvent e)
+}
+
+class InterfazUsuario {
+    +Graphics2D g2
+    +PanelJuego pJuego
+    +boolean mensajeOn
+    +String mensaje
+    --
+    +void mostrarMensaje(String texto)
+    +void setDialogo()
+    +void draw(Graphics2D g2)
+}
+
+class PanelJuego {
+    +final int originalPixel
+    +final int escala
+    +final int dimensionCasillas
+    +final int maxCol
+    +final int maxFil
+    +final int altoPantalla
+    +final int anchoPantalla
+    +final int maxJuegoFila
+    +final int maxJuegoColumna
+    +int fps
+    +boolean inicioJuego
+    +InterfazUsuario iu
+    +GestorColisiones gestColisiones
+    +GestorCasillas gestCasillas
+    +GestorTeclado gestTec
+    +GestorEntidades gestEnt
+    +Thread gameThread
+    +Sonido sonido
+    +Jugador jugador
+    +SuperObjeto[] objetos
+    +Entidad[] npcs
+    +Entidad[] monstruos
+    +int contadorMensajeInicio
+    --
+    +PanelJuego()
+    +void setUpJuego()
+    +void startGameThread()
+    +void run()
+    +void update()
+    +void paintComponent(Graphics g)
+    +void playMusica(int i)
+    +void stopMusic()
+    +void playEfectos(int i)
+}
+
+class SuperObjeto {
+    +BufferedImage imagen
+    +BufferedImage imagen2
+    +BufferedImage imagen3
+    +TipoObjetos nombre
+    +boolean colision
+    +int posMundoX
+    +int posMundoY
+    +Rectangle hitbox
+    +int hitBoxDefaultX
+    +int hitBoxDefaultY
+    +Util util
+    --
+    +void draw(Graphics2D g2, PanelJuego pJuego)
+}
+
+class Sonido {
+    -Clip clip
+    -URL[] sonidos
+    --
+    +Sonido()
+    +void setFile(int i)
+    +void play()
+    +void loop()
+    +void stop()
+    +void setVolume(float volume)
+}
+
+Jugador "1" --> "*" SuperObjeto : contiene
+PanelJuego "1" --> "1" InterfazUsuario
+PanelJuego "1" --> "1" GestorColisiones
+PanelJuego "1" --> "1" GestorCasillas
+PanelJuego "1" --> "1" GestorTeclado
+PanelJuego "1" --> "1" GestorEntidades
+PanelJuego "1" --> "1" Sonido
+PanelJuego "1" --> "*" Entidad : contiene
+PanelJuego "1" --> "*" SuperObjeto : contiene
+PanelJuego "1" --> "*" Entidad : contiene
+SuperObjeto "1" --> "1" Util
+
+@enduml
