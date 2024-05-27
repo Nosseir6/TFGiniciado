@@ -4,14 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Actualizado metodo de dibujo para una mejora de eficiencia (no se para que lo hago)">
+    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Perofeccionado clase de entidades y iniciado el apartado del Slime">
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Abajo/Abajo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Abajo/Abajo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Abajo/Abajo3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Abajo/Abajo4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Abajo/Abajo5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Arriba/Arriba1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Arriba/Arriba2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Arriba/Arriba3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Arriba/Arriba4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Arriba/Arriba5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Derecha/Derecha1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Derecha/Derecha2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Derecha/Derecha3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Derecha/Derecha4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Derecha/Derecha5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Izquierda/Izquierda1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Izquierda/Izquierda2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Izquierda/Izquierda3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Izquierda/Izquierda4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/esqueleto/Izquierda/Izquierda5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sonidos/Muerte.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entidades/EsqueletoNPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2024_9_36_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2024_9_36__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/casillas/darkWall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/casillas/marble_floor1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/casillas/marble_wall1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Slime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entidades/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Esqueleto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Entidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GestorColisiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorColisiones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GestorObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorObjetos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GestorObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorEntidades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/InterfazUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/InterfazUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/PanelJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/PanelJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sonido/Sonido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sonido/Sonido.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,22 +77,24 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.Main.executor": "Run",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/resources/enemigos/slime"
+    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/resources/esqueleto",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\esqueleto" />
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\enemigos\slime" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\objetos\corazon" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\sonidos" />
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\objetos" />
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\objetos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\sonidos" />
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\esqueleto" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\textos" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\casillas\paredes" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador\Adelante" />
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\jugador" />
     </key>
   </component>
   <component name="RunManager">
@@ -160,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716815954485</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Perofeccionado clase de entidades y iniciado el apartado del Slime">
+      <option name="closed" value="true" />
+      <created>1716819788587</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716819788587</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,7 +223,8 @@
     <MESSAGE value="Añadido clase interfaz usuario y modificado ruta de acceso a los archivos de imagenenes" />
     <MESSAGE value="Creado el altar que acaba el juego asi como el mensaje inicial" />
     <MESSAGE value="Actualizado metodo de dibujo para una mejora de eficiencia (no se para que lo hago)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizado metodo de dibujo para una mejora de eficiencia (no se para que lo hago)" />
+    <MESSAGE value="Perofeccionado clase de entidades y iniciado el apartado del Slime" />
+    <option name="LAST_COMMIT_MESSAGE" value="Perofeccionado clase de entidades y iniciado el apartado del Slime" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TFGiniciado$Main.ic" NAME="Main Coverage Results" MODIFIED="1716721508582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

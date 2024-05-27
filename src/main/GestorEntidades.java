@@ -1,15 +1,16 @@
 package main;
 
-import entidades.Slime;
+import entidades.EsqueletoNPC;
+import entidades.Esqueleto;
 import objetos.Altar;
 import objetos.Cofre;
 import objetos.Llave;
 import objetos.Puerta;
 
-public class GestorObjetos
+public class GestorEntidades
 {
     PanelJuego pJuego;
-    public GestorObjetos(PanelJuego pJuego)
+    public GestorEntidades(PanelJuego pJuego)
     {
         this.pJuego = pJuego;
     }
@@ -59,10 +60,23 @@ public class GestorObjetos
 
     }
 
+    public void setNPC()
+    {
+        pJuego.npcs[0] = new EsqueletoNPC(pJuego);
+        pJuego.npcs[0].posMundoX = 17 * pJuego.dimensionCasillas;
+        pJuego.npcs[0].posMundoY = 2 * pJuego.dimensionCasillas;
+    }
+
     public void setMonstruo()
     {
-        pJuego.monstruos[0] = new Slime(pJuego);
-        pJuego.monstruos[0].posMundoX = pJuego.dimensionCasillas*5;
-        pJuego.monstruos[0].posMundoY = pJuego.dimensionCasillas * 34;
+        pJuego.monstruos[0] = new Esqueleto(pJuego);
+        pJuego.monstruos[0].posMundoX = 5 * pJuego.dimensionCasillas;
+        pJuego.monstruos[0].posMundoY = 34 * pJuego.dimensionCasillas;
+        pJuego.monstruos[1] = new Esqueleto(pJuego);
+        pJuego.monstruos[1].posMundoX = 10 * pJuego.dimensionCasillas;
+        pJuego.monstruos[1].posMundoY =  34 * pJuego.dimensionCasillas;
+        pJuego.monstruos[2] = new Esqueleto(pJuego);
+        pJuego.monstruos[2].posMundoX = 3 * pJuego.dimensionCasillas;
+        pJuego.monstruos[2].posMundoY =  3 * pJuego.dimensionCasillas;
     }
 }

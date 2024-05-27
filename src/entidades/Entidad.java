@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class SuperEntidad {
+public class Entidad {
 
     PanelJuego pJuego;
 
@@ -19,10 +19,7 @@ public class SuperEntidad {
     public BufferedImage imagenArriba, arriba1, arriba2, arriba3, arriba4, arriba5, arriba6;
     public BufferedImage imagenDrch, drch1, drch2, drch3, drch4, drch5, drch6;
     public BufferedImage imagenIzq, izq1, izq2, izq3, izq4, izq5, izq6;
-    BufferedImage[] imagenesArriba = {imagenArriba, arriba1, arriba2, arriba3, arriba4, arriba5, arriba6};
-    BufferedImage[] imagenesAbajo = {imagenAbajo, abajo1, abajo2, abajo3, abajo4, abajo5, abajo6};
-    BufferedImage[] imagenesIzquierda = {imagenIzq, izq1, izq2, izq3, izq4, izq5, izq6};
-    BufferedImage[] imagenesDerecha = {imagenDrch, drch1, drch2, drch3, drch4, drch5, drch6};
+
     public Direcciones direccion;
     public int spriteCounter = 0;
     public int spriteNum = 1;
@@ -30,15 +27,17 @@ public class SuperEntidad {
     public int hitbox_XPorDefecto;
     public int hitbox_YPorDefecto;
 
-    public Rectangle hitBox;
+    public Rectangle hitBox = new Rectangle(0, 0, 64, 64);
     public boolean hayColision = false;
 
     public int vidaMax;
     public int vida;
 
     public int contadorAcciones = 0;
+    public boolean invencibilidad = false;
+    public int contInven = 0;
 
-    public SuperEntidad(PanelJuego pJuego)
+    public Entidad(PanelJuego pJuego)
     {
         this.pJuego = pJuego;
     }
@@ -47,6 +46,10 @@ public class SuperEntidad {
         int xPantalla = posMundoX - pJuego.jugador.posMundoX + pJuego.jugador.posXPantalla; //parte de la pantalla en la que lo dibujamos, se suma la posicion de la pantalla para compensar la diferencia en caso de las esquinas
         int yPantalla = posMundoY - pJuego.jugador.posMundoY + pJuego.jugador.posYPantalla;
 
+            BufferedImage[] imagenesArriba = {imagenArriba, arriba1, arriba2, arriba3, arriba4, arriba5, arriba6};
+        BufferedImage[] imagenesAbajo = {imagenAbajo, abajo1, abajo2, abajo3, abajo4, abajo5, abajo6};
+        BufferedImage[] imagenesIzquierda = {imagenIzq, izq1, izq2, izq3, izq4, izq5, izq6};
+        BufferedImage[] imagenesDerecha = {imagenDrch, drch1, drch2, drch3, drch4, drch5, drch6};
 
         if ((posMundoX + pJuego.dimensionCasillas > pJuego.jugador.posMundoX - pJuego.jugador.posXPantalla) ||
                 (posMundoX - pJuego.dimensionCasillas < pJuego.jugador.posMundoX + pJuego.jugador.posXPantalla) ||
@@ -64,7 +67,6 @@ public class SuperEntidad {
             }
 
 
-
             g2.drawImage(imagen, xPantalla, yPantalla, pJuego.dimensionCasillas, pJuego.dimensionCasillas, null);
         }
     }
@@ -76,6 +78,8 @@ public class SuperEntidad {
         hayColision = false;
         pJuego.gestColisiones.comprobarCasilla(this);
         pJuego.gestColisiones.colisionObjetos(this,false);
+        pJuego.gestColisiones.comprobarEntidad(this, pJuego.monstruos);
+        pJuego.gestColisiones.comprobarEntidad(this, pJuego.npcs);
         pJuego.gestColisiones.comprobarJugador(this);
 
         spriteCounter++;

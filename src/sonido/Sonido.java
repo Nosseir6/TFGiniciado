@@ -11,6 +11,7 @@ public class Sonido {
     public Sonido() {
         sonidos[0] = getClass().getResource("/sonidos/Hades-No-Escape.wav");
         sonidos[1] = getClass().getResource("/sonidos/LevelFinish.wav");
+        sonidos[2] = getClass().getResource("/sonidos/Muerte.wav");
     }
 
     public void setFile(int i) {

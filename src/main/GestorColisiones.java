@@ -1,6 +1,6 @@
 package main;
 
-import entidades.SuperEntidad;
+import entidades.Entidad;
 
 public class GestorColisiones
 {
@@ -11,7 +11,7 @@ public class GestorColisiones
         this.pJuego = panelJuego;
     }
 
-    public void comprobarCasilla(SuperEntidad entidad)
+    public void comprobarCasilla(Entidad entidad)
     {
         int entidadXIzqMundo = entidad.posMundoX + entidad.hitBox.x;
         int entidadXDerchMundo = entidad.posMundoX + entidad.hitBox.x + entidad.hitBox.width;
@@ -71,7 +71,7 @@ public class GestorColisiones
     }
 
 
-    public int colisionObjetos(SuperEntidad entidad, boolean jugador)
+    public int colisionObjetos(Entidad entidad, boolean jugador)
     {
         int index = 999;
 
@@ -89,46 +89,17 @@ public class GestorColisiones
 
                 switch (entidad.direccion)
                 {
-                    case ARRIBA -> {
-                        entidad.hitBox.y -= entidad.velocidad;
-                        if (entidad.hitBox.intersects(pJuego.objetos[i].hitbox))
-                        {
-                            if (pJuego.objetos[i].colision)
-                                entidad.hayColision = true;
-                            if (jugador)
-                                index = i;
-                        }
-                    }
-                    case ABAJO -> {
-                        entidad.hitBox.y += entidad.velocidad;
-                        if (entidad.hitBox.intersects(pJuego.objetos[i].hitbox))
-                        {
-                            if (pJuego.objetos[i].colision)
-                                entidad.hayColision = true;
-                            if (jugador)
-                                index = i;
-                        }
-                    }
-                    case IZQUIERDA -> {
-                        entidad.hitBox.x -= entidad.velocidad;
-                        if (entidad.hitBox.intersects(pJuego.objetos[i].hitbox))
-                        {
-                            if (pJuego.objetos[i].colision)
-                                entidad.hayColision = true;
-                            if (jugador)
-                                index = i;
-                        }
-                    }
-                    case DERECHA -> {
-                        entidad.hitBox.x += entidad.velocidad;
-                        if (entidad.hitBox.intersects(pJuego.objetos[i].hitbox))
-                        {
-                            if (pJuego.objetos[i].colision)
-                                entidad.hayColision = true;
-                            if (jugador)
-                                index = i;
-                        }
-                    }
+                    case ARRIBA ->entidad.hitBox.y -= entidad.velocidad;
+                    case ABAJO ->entidad.hitBox.y += entidad.velocidad;
+                    case IZQUIERDA ->entidad.hitBox.x -= entidad.velocidad;
+                    case DERECHA ->entidad.hitBox.x += entidad.velocidad;
+                }
+                if (entidad.hitBox.intersects(pJuego.objetos[i].hitbox))
+                {
+                    if (pJuego.objetos[i].colision)
+                        entidad.hayColision = true;
+                    if (jugador)
+                        index = i;
                 }
                 entidad.hitBox.x = entidad.hitbox_XPorDefecto;
                 entidad.hitBox.y = entidad.hitbox_YPorDefecto;
@@ -141,7 +112,7 @@ public class GestorColisiones
     }
 
     //COLISION CON LOS MONSTRUOS
-    public int comprobarEntidad(SuperEntidad entidad, SuperEntidad[] objetivo)
+    public int comprobarEntidad(Entidad entidad, Entidad[] objetivo)
     {
         int index = 999;
 
@@ -159,38 +130,19 @@ public class GestorColisiones
 
                 switch (entidad.direccion)
                 {
-                    case ARRIBA -> {
-                        entidad.hitBox.y -= entidad.velocidad;
-                        if (entidad.hitBox.intersects(objetivo[i].hitBox))
-                        {
-                                entidad.hayColision = true;
-                                index = i;
-                        }
+                    case ARRIBA -> entidad.hitBox.y -= entidad.velocidad;
+                    case ABAJO -> entidad.hitBox.y += entidad.velocidad;
+                    case IZQUIERDA -> entidad.hitBox.x -= entidad.velocidad;
+                    case DERECHA -> entidad.hitBox.x += entidad.velocidad;
+                }
+                if (entidad.hitBox.intersects(objetivo[i].hitBox))
+                {
+                    if (objetivo[i] != entidad)
+                    {
+                        entidad.hayColision = true;
+                        index = i;
                     }
-                    case ABAJO -> {
-                        entidad.hitBox.y += entidad.velocidad;
-                        if (entidad.hitBox.intersects(objetivo[i].hitBox))
-                        {
-                                entidad.hayColision = true;
-                                index = i;
-                        }
-                    }
-                    case IZQUIERDA -> {
-                        entidad.hitBox.x -= entidad.velocidad;
-                        if (entidad.hitBox.intersects(objetivo[i].hitBox))
-                        {
-                            entidad.hayColision = true;
-                                index = i;
-                        }
-                    }
-                    case DERECHA -> {
-                        entidad.hitBox.x += entidad.velocidad;
-                        if (entidad.hitBox.intersects(objetivo[i].hitBox))
-                        {
-                                entidad.hayColision = true;
-                                index = i;
-                        }
-                    }
+
                 }
                 entidad.hitBox.x = entidad.hitbox_XPorDefecto;
                 entidad.hitBox.y = entidad.hitbox_YPorDefecto;
@@ -202,7 +154,7 @@ public class GestorColisiones
         return index;
     }
 
-    public void comprobarJugador(SuperEntidad entidad)
+    public void comprobarJugador(Entidad entidad)
     {
         //Obtener la posicion de la hitbox de la entidad
         entidad.hitBox.x = entidad.posMundoX + entidad.hitBox.x;

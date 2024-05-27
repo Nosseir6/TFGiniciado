@@ -4,7 +4,6 @@ import interfaces.Direcciones;
 import interfaces.TipoObjetos;
 import main.GestorTeclado;
 import main.PanelJuego;
-import main.Util;
 import objetos.Cofre;
 import objetos.Puerta;
 
@@ -13,7 +12,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class Jugador extends SuperEntidad
+public class Jugador extends Entidad
 {
 
     GestorTeclado gestTec;
@@ -128,7 +127,16 @@ public class Jugador extends SuperEntidad
             interactuarConObjetos(indexObjeto);
 
             //COMPROBAR COLISION NPCS
-            int indexNPC = pJuego.gestColisiones.comprobarEntidad(this,pJuego.monstruos);
+            int indexNPC = pJuego.gestColisiones.comprobarEntidad(this,pJuego.npcs);
+            interactuarNPC(indexNPC);
+
+            //COMPROBAR COLISION MONSTRUOS
+            int indexMonstruos = pJuego.gestColisiones.comprobarEntidad(this, pJuego.monstruos);
+            tocarMonstruo(indexMonstruos);
+
+            //COMPROBAR SI JUGADOR HA MUERTO
+            jugadorMuerto();
+
 
             //SI hayColision == false EL JUGADOR SE PUEDE MOVER
             if (!hayColision) {
@@ -141,6 +149,16 @@ public class Jugador extends SuperEntidad
             } else {
                 spriteNum = 0;
                 spriteCounter = 0;
+            }
+        }
+
+        if (invencibilidad)
+        {
+            contInven++;
+            if (contInven >= 60)
+            {
+                invencibilidad = false;
+                contInven = 0;
             }
         }
     }
@@ -161,7 +179,16 @@ public class Jugador extends SuperEntidad
             case DERECHA -> imagen = imagenesDerecha[spriteNum];
         }
 
+        if (invencibilidad)
+        {
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,0.3f));
+        }
+
         g2.drawImage(imagen, posXPantalla, posYPantalla,null);
+
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,1f));
+
+
     }
 
     public void interactuarConObjetos(int i)
@@ -227,6 +254,36 @@ public class Jugador extends SuperEntidad
                 }
 
             }
+        }
+    }
+
+    public void interactuarNPC(int index)
+    {
+        if (index != 999)
+        {
+
+        }
+    }
+
+    public void tocarMonstruo(int index)
+    {
+        if (index != 999)
+        {
+            if (!invencibilidad)
+            {
+                vida -= 1;
+                invencibilidad = true;
+            }
+        }
+    }
+
+    public void jugadorMuerto()
+    {
+        if (vida == 0)
+        {
+            pJuego.iu.juegoAcabado = true;
+            pJuego.stopMusic();
+            pJuego.playEfectos(2);
         }
     }
 }

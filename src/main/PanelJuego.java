@@ -2,7 +2,7 @@ package main;
 
 import casilla.GestorCasillas;
 import entidades.Jugador;
-import entidades.SuperEntidad;
+import entidades.Entidad;
 import objetos.SuperObjeto;
 import sonido.Sonido;
 
@@ -37,12 +37,13 @@ public class PanelJuego extends JPanel implements Runnable {
     public GestorColisiones gestColisiones = new GestorColisiones(this);
     GestorCasillas gestCasillas = new GestorCasillas(this);
     GestorTeclado gestTec = new GestorTeclado();
-    GestorObjetos gestObj = new GestorObjetos(this);
+    GestorEntidades gestEnt = new GestorEntidades(this);
     Thread gameThread;
     Sonido sonido = new Sonido();
     public Jugador jugador = new Jugador(this,gestTec);
     public SuperObjeto[] objetos = new SuperObjeto[15];
-    public SuperEntidad[] monstruos = new SuperEntidad[10];
+    public Entidad[] npcs = new Entidad[10];
+    public Entidad[] monstruos = new Entidad[10];
     public int contadorMensajeInicio = 0;
 
 
@@ -59,10 +60,12 @@ public class PanelJuego extends JPanel implements Runnable {
 
     public void setUpJuego()
     {
-        gestObj.setObjeto();
+        gestEnt.setObjeto();
+        gestEnt.setNPC();
+        gestEnt.setMonstruo();
         playMusica(0);
         iu.setDialogo();
-        gestObj.setMonstruo();
+
     }
 
     public void startGameThread() {
@@ -107,7 +110,20 @@ public class PanelJuego extends JPanel implements Runnable {
         else
             inicioJuego = false;
 
+        //ACTUALIZAR NPCS
+        for (int i = 0; i < npcs.length; i++)
+        {
+            if (npcs[i] != null)
+                npcs[i].update();
+        }
 
+        for (int i = 0 ; i < monstruos.length; i++)
+        {
+            if (monstruos[i] != null)
+            {
+                monstruos[i].update();
+            }
+        }
     }
     public void paintComponent(Graphics g)
     {
@@ -125,9 +141,27 @@ public class PanelJuego extends JPanel implements Runnable {
                 objeto.draw(g2,this);
         }
 
+        //DIBUJAR NPCS
+        for (Entidad npc : npcs) {
+            if (npc != null)
+                npc.draw(g2);
+        }
+        for (Entidad mons : monstruos) {
+            if (mons != null)
+                mons.draw(g2);
+        }
+
         //DIBUJAR JUGADOR
         jugador.draw(g2);
 
+        //DIBUJAR MONSTRUOS
+        for (Entidad entidad : monstruos)
+        {
+            if (entidad != null)
+            {
+                entidad.draw(g2);
+            }
+        }
         //DIBUJAR INTERFAZ USUARIO
         iu.draw(g2);
 

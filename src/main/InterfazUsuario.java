@@ -77,18 +77,37 @@ public class InterfazUsuario
 
         if (juegoAcabado)
         {
-            String texto;
+            if (pJuego.jugador.vida == 0)
+            {
+                String texto;
 
-            g2.setFont(arial_40);
-            g2.setColor(Color.white);
+                g2.setFont(arial_40);
+                g2.setColor(Color.white);
 
-            texto = "Felicidades has terminado el juego";
-            int mensajeLong = (int)g2.getFontMetrics().getStringBounds(texto , g2).getWidth();// PARA OBETENER LONGITUD DEL TEXTO
-            int x = pJuego.anchoPantalla/2 - mensajeLong/2;
-            int y = pJuego.altoPantalla/2 - (pJuego.dimensionCasillas * 3);
-            g2.drawString(texto, x, y);
+                texto = "Has muerto";
+                int mensajeLong = (int)g2.getFontMetrics().getStringBounds(texto , g2).getWidth();// PARA OBETENER LONGITUD DEL TEXTO
+                int x = pJuego.anchoPantalla/2 - mensajeLong/2;
+                int y = pJuego.altoPantalla/2 - (pJuego.dimensionCasillas * 3);
+                g2.drawString(texto, x, y);
 
-            pJuego.gameThread = null;
+                pJuego.gameThread = null;
+            }
+            else
+            {
+                String texto;
+
+                g2.setFont(arial_40);
+                g2.setColor(Color.white);
+
+                texto = "Felicidades has terminado el juego";
+                int mensajeLong = (int)g2.getFontMetrics().getStringBounds(texto , g2).getWidth();// PARA OBETENER LONGITUD DEL TEXTO
+                int x = pJuego.anchoPantalla/2 - mensajeLong/2;
+                int y = pJuego.altoPantalla/2 - (pJuego.dimensionCasillas * 3);
+                g2.drawString(texto, x, y);
+
+                pJuego.gameThread = null;
+            }
+
 
         }
         else
