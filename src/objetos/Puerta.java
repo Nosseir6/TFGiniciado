@@ -1,6 +1,7 @@
 package objetos;
 
 import interfaces.TipoObjetos;
+import main.PanelJuego;
 
 import javax.imageio.ImageIO;
 import java.io.IOException;
@@ -8,8 +9,8 @@ import java.io.IOException;
 public class Puerta extends SuperObjeto
 {
     public boolean abierta;
-
-    public Puerta()
+    PanelJuego pJuego;
+    public Puerta(PanelJuego pJuego)
     {
         nombre = TipoObjetos.PUERTA;
         try {

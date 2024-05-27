@@ -4,6 +4,7 @@ import interfaces.Direcciones;
 import interfaces.TipoObjetos;
 import main.GestorTeclado;
 import main.PanelJuego;
+import main.Util;
 import objetos.Cofre;
 import objetos.Puerta;
 
@@ -22,6 +23,10 @@ public class Jugador extends SuperEntidad
     public final int posYPantalla;
 
     public int numLlaves = 0;
+
+    public int vidaMax;
+    public int vida;
+
     public Jugador (PanelJuego pJuego, GestorTeclado gestTec)
     {
         this.pJuego = pJuego;
@@ -50,55 +55,67 @@ public class Jugador extends SuperEntidad
         posMundoY = 450;
         velocidad = 3;
         direccion = Direcciones.ABAJO; //ASIGNACION DE VALOR POR DEFECTO PARA SABER COMO SE VA APARECER DIBUAJADO EL PERSONAJE LA PRIMERA VEZ
+
+        vidaMax = 6;
+        vida = vidaMax;
     }
 
     public void setJugadorImagen()
     {
-        try
-        {
+
             //ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA ABAJO
-            imagenAbajo = ImageIO.read(getClass().getResourceAsStream("/caballero/Abajo/Caballero1.png"));
-            abajo1 = ImageIO.read(getClass().getResourceAsStream("/caballero/Abajo/Caballero2.png"));
-            abajo2 = ImageIO.read(getClass().getResourceAsStream("/caballero/Abajo/Caballero3.png"));
-            abajo3 = ImageIO.read(getClass().getResourceAsStream("/caballero/Abajo/Caballero4.png"));
-            abajo4 = ImageIO.read(getClass().getResourceAsStream("/caballero/Abajo/Caballero5.png"));
-            abajo5 = ImageIO.read(getClass().getResourceAsStream("/caballero/Abajo/Caballero6.png"));
-            abajo6 = ImageIO.read(getClass().getResourceAsStream("/caballero/Abajo/Caballero7.png"));
+            imagenAbajo = setup("/caballero/Abajo/Caballero1.png");
+            abajo1 = setup("/caballero/Abajo/Caballero2.png");
+            abajo2 = setup("/caballero/Abajo/Caballero3.png");
+            abajo3 = setup("/caballero/Abajo/Caballero4.png");
+            abajo4 = setup("/caballero/Abajo/Caballero5.png");
+            abajo5 = setup("/caballero/Abajo/Caballero6.png");
+            abajo6 = setup("/caballero/Abajo/Caballero7.png");
 
             //ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA ARRIBA
-            imagenArriba = ImageIO.read(getClass().getResourceAsStream("/caballero/Arriba/Arriba1.png"));
-            arriba1=ImageIO.read(getClass().getResourceAsStream("/caballero/Arriba/Arriba2.png"));
-            arriba2=ImageIO.read(getClass().getResourceAsStream("/caballero/Arriba/Arriba3.png"));
-            arriba3=ImageIO.read(getClass().getResourceAsStream("/caballero/Arriba/Arriba4.png"));
-            arriba4=ImageIO.read(getClass().getResourceAsStream("/caballero/Arriba/Arriba5.png"));
-            arriba5=ImageIO.read(getClass().getResourceAsStream("/caballero/Arriba/Arriba6.png"));
-            arriba6=ImageIO.read(getClass().getResourceAsStream("/caballero/Arriba/Arriba7.png"));
+            imagenArriba = setup("/caballero/Arriba/Arriba1.png");
+            arriba1=setup("/caballero/Arriba/Arriba2.png");
+            arriba2=setup("/caballero/Arriba/Arriba3.png");
+            arriba3=setup("/caballero/Arriba/Arriba4.png");
+            arriba4=setup("/caballero/Arriba/Arriba5.png");
+            arriba5=setup("/caballero/Arriba/Arriba6.png");
+            arriba6=setup("/caballero/Arriba/Arriba7.png");
 
             //ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA LA DERECHA
-            imagenDrch = ImageIO.read(getClass().getResourceAsStream("/caballero/Derecha/Derecha1.png"));
-            drch1 = ImageIO.read(getClass().getResourceAsStream("/caballero/Derecha/Derecha2.png"));
-            drch2 = ImageIO.read(getClass().getResourceAsStream("/caballero/Derecha/Derecha3.png"));
-            drch3 = ImageIO.read(getClass().getResourceAsStream("/caballero/Derecha/Derecha4.png"));
-            drch4 = ImageIO.read(getClass().getResourceAsStream("/caballero/Derecha/Derecha5.png"));
-            drch5 = ImageIO.read(getClass().getResourceAsStream("/caballero/Derecha/Derecha6.png"));
-            drch6 = ImageIO.read(getClass().getResourceAsStream("/caballero/Derecha/Derecha7.png"));
+            imagenDrch = setup("/caballero/Derecha/Derecha1.png");
+            drch1 = setup("/caballero/Derecha/Derecha2.png");
+            drch2 = setup("/caballero/Derecha/Derecha3.png");
+            drch3 = setup("/caballero/Derecha/Derecha4.png");
+            drch4 = setup("/caballero/Derecha/Derecha5.png");
+            drch5 = setup("/caballero/Derecha/Derecha6.png");
+            drch6 = setup("/caballero/Derecha/Derecha7.png");
 
             //ASIGNACION DE LOS SPRITES DE LA ANIMACION DE CORRER HACIA LA IZQUIERDA
-            imagenIzq = ImageIO.read(getClass().getResourceAsStream("/caballero/Izquierda/Izquierda1.png"));
-            izq1 = ImageIO.read(getClass().getResourceAsStream("/caballero/Izquierda/Izquierda2.png"));
-            izq2 = ImageIO.read(getClass().getResourceAsStream("/caballero/Izquierda/Izquierda3.png"));
-            izq3 = ImageIO.read(getClass().getResourceAsStream("/caballero/Izquierda/Izquierda4.png"));
-            izq4 = ImageIO.read(getClass().getResourceAsStream("/caballero/Izquierda/Izquierda5.png"));
-            izq5 = ImageIO.read(getClass().getResourceAsStream("/caballero/Izquierda/Izquierda6.png"));
-            izq6 = ImageIO.read(getClass().getResourceAsStream("/caballero/Izquierda/Izquierda7.png"));
-        }catch (IOException e)
-        {
-            System.err.println("Error al acceder a la imagenes");
-            e.printStackTrace();
-        }
-
+            imagenIzq = setup("/caballero/Izquierda/Izquierda1.png");
+            izq1 = setup("/caballero/Izquierda/Izquierda2.png");
+            izq2 = setup("/caballero/Izquierda/Izquierda3.png");
+            izq3 = setup("/caballero/Izquierda/Izquierda4.png");
+            izq4 = setup("/caballero/Izquierda/Izquierda5.png");
+            izq5 = setup("/caballero/Izquierda/Izquierda6.png");
+            izq6 = setup("/caballero/Izquierda/Izquierda7.png");
 
     }
+
+    public BufferedImage setup(String rutaImagen)
+    {
+        Util util = new Util();
+        BufferedImage imagen = null;
+
+        try {
+            imagen = ImageIO.read(getClass().getResourceAsStream(rutaImagen));
+            imagen = util.escalada(imagen, pJuego.dimensionCasillas, pJuego.dimensionCasillas);
+        }catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return imagen;
+    }
+
 
     public void update() {
         if (gestTec.arribaPres || gestTec.abajoPres || gestTec.drchPres || gestTec.izqPres) {
@@ -157,7 +174,7 @@ public class Jugador extends SuperEntidad
             case DERECHA -> imagen = imagenesDerecha[spriteNum];
         }
 
-        g2.drawImage(imagen, posXPantalla, posYPantalla,pJuego.dimensionCasillas,pJuego.dimensionCasillas, null);
+        g2.drawImage(imagen, posXPantalla, posYPantalla,null);
     }
 
     public void interactuarConObjetos(int i)

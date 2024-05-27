@@ -1,6 +1,8 @@
 package main;
 
+import objetos.Corazon;
 import objetos.Llave;
+import objetos.SuperObjeto;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -21,8 +23,9 @@ public class InterfazUsuario
     public String[] dialogo = new String[6];
 
     public boolean juegoAcabado = false;
-    double tiempoJuego;
-    DecimalFormat df = new DecimalFormat("#0.00");
+    BufferedImage corazonComp, medioCor, corazonVacio;
+    //double tiempoJuego;
+    //DecimalFormat df = new DecimalFormat("#0.00");
 
 
     public InterfazUsuario(PanelJuego pJuego)
@@ -31,8 +34,14 @@ public class InterfazUsuario
         arial_40 = new Font("Arial",Font.PLAIN,40);
         comic_sans15 = new Font("Comic Sans MS",Font.ITALIC,15);
         comic_sans30 = new Font("Comic Sans MS",Font.ITALIC,30);
-        Llave llave = new Llave();
+        Llave llave = new Llave(pJuego);
         buffImg = llave.imagen;
+
+        //CORAZONES
+        SuperObjeto corazon = new Corazon(pJuego);
+        corazonComp = corazon.imagen;
+        medioCor = corazon.imagen2;
+        corazonVacio = corazon.imagen3;
     }
 
     public void mostrarMensaje(String texto)
@@ -63,8 +72,8 @@ public class InterfazUsuario
 
         g2.setFont(arial_40);
         g2.setColor(Color.WHITE);
-        g2.drawString(" x " +pJuego.jugador.numLlaves, 70, 60);
-        g2.drawImage(buffImg, pJuego.dimensionCasillas/5, pJuego.dimensionCasillas/5, pJuego.dimensionCasillas,pJuego.dimensionCasillas, null);
+        g2.drawString(" x " +pJuego.jugador.numLlaves, pJuego.anchoPantalla - 2 * pJuego.dimensionCasillas, 60);
+        g2.drawImage(buffImg, pJuego.anchoPantalla - 3* pJuego.dimensionCasillas, pJuego.dimensionCasillas/5, pJuego.dimensionCasillas,pJuego.dimensionCasillas, null);
 
         if (juegoAcabado)
         {
@@ -85,8 +94,8 @@ public class InterfazUsuario
         else
         {
             //Medicion de tiempo que le lleva a el jugador terminar el juego
-//          tiempoJuego += (double) 1/60;
-//          g2.drawString("Tiempo: " + df.format(tiempoJuego), pJuego.dimensionCasillas*16,60);
+            //tiempoJuego += (double) 1/60;
+            //g2.drawString("Tiempo: " + df.format(tiempoJuego), pJuego.dimensionCasillas*16,60);
 
             //MENSAJE
             if (mensajeOn)
@@ -102,6 +111,8 @@ public class InterfazUsuario
                 }
             }
         }
+
+        dibujarVida(g2);
     }
 
     public void dibujarPantallaDialogo(Graphics2D g2)
@@ -141,8 +152,39 @@ public class InterfazUsuario
         g2.drawRoundRect(x+5, y+5, ancho-10, alto-10, 25, 25);
     }
 
-    public void obetnerMensaje(String rutaTexto)
+    public void dibujarVida(Graphics2D g2)
     {
+        int x = pJuego.dimensionCasillas/2;
+        int y = pJuego.dimensionCasillas/2;
+
+        int i = 0;
+
+        //DIBUJAR VIDA MAXIMA
+        while (i < pJuego.jugador.vidaMax/2)
+        {
+            g2.drawImage(corazonVacio, x, y, null);
+            i++;
+            x += pJuego.dimensionCasillas;
+        }
+
+        //RESET
+        x = pJuego.dimensionCasillas/2;
+        y = pJuego.dimensionCasillas/2;
+        i = 0;
+
+        //DIBUJAR VIDA ACTUAL
+        while (i < pJuego.jugador.vida)
+        {
+            g2.drawImage(medioCor, x , y ,null);
+            i++;
+            if (i < pJuego.jugador.vida)
+            {
+                g2.drawImage(corazonComp, x, y , null);
+            }
+            i++;
+            x += pJuego.dimensionCasillas;
+        }
 
     }
+
 }

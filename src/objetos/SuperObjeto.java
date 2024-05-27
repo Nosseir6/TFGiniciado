@@ -2,19 +2,21 @@ package objetos;
 
 import interfaces.TipoObjetos;
 import main.PanelJuego;
+import main.Util;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class SuperObjeto
 {
-    public BufferedImage imagen;
+    public BufferedImage imagen, imagen2, imagen3;
     public TipoObjetos nombre;
     public boolean colision = false;
     public int posMundoX, posMundoY;
     public Rectangle hitbox = new Rectangle(0,0,64,64);
     public int hitBoxDefaultX = 0;
     public int hitBoxDefaultY = 0;
+    Util util = new Util();
 
     public void draw(Graphics2D g2, PanelJuego pJuego)
     {

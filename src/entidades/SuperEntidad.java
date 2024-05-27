@@ -1,6 +1,7 @@
 package entidades;
 
 import interfaces.Direcciones;
+import main.PanelJuego;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -21,4 +22,9 @@ public class SuperEntidad {
 
     public Rectangle hitBox;
     public boolean hayColision = false;
+
+    public int vidaMax;
+    public int vida;
+
+    int contadorAcciones = 0;
 }

@@ -2,5 +2,5 @@ package interfaces;
 
 public enum TipoObjetos
 {
-    COFRE,LLAVE,PUERTA, ALTAR
+    COFRE,LLAVE,PUERTA, ALTAR, CORAZON
 }

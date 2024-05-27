@@ -4,20 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Añadido clase interfaz usuario y modificado ruta de acceso a los archivos de imagenenes">
-      <change afterPath="$PROJECT_DIR$/resources/objetos/altarFinal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sonidos/LevelFinish.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objetos/Altar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/textos/Texto.txt" afterDir="false" />
+    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Creado el altar que acaba el juego asi como el mensaje inicial">
+      <change afterPath="$PROJECT_DIR$/resources/enemigos/slime/Slime.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/enemigos/slime/Slime2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/objetos/corazon/corazonComp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/objetos/corazon/corazonVacio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/objetos/corazon/medioCor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entidades/Slime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/objetos/Corazon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapas/MapaAvanzado.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mapas/MapaAvanzado.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapas/MapaBase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mapas/MapaBase.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/casilla/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/casilla/Casilla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/casilla/GestorCasillas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entidades/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/SuperEntidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaces/TipoObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/TipoObjetos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GestorObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorObjetos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/InterfazUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/InterfazUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/PanelJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/PanelJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sonido/Sonido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sonido/Sonido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Altar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Altar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Cofre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Cofre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Llave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Llave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/Puerta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/Puerta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objetos/SuperObjeto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objetos/SuperObjeto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,16 +63,16 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.Main.executor": "Run",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/resources/sonidos"
+    "last_opened_file_path": "C:/Users/nosse/IdeaProjects/TFGiniciado/resources/enemigos/slime"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\enemigos\slime" />
+      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\objetos\corazon" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\sonidos" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\resources\objetos" />
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\objetos" />
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\casillas\suelo" />
-      <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\imagenes\casillas" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nosse\IdeaProjects\TFGiniciado\textos" />
@@ -150,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716721717340</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Creado el altar que acaba el juego asi como el mensaje inicial">
+      <option name="closed" value="true" />
+      <created>1716798733609</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716798733610</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,7 +189,8 @@
     <MESSAGE value="Añadida la clase Casilla y su gestor Correspondiente, ademas de añadido dos sprites para las casillas" />
     <MESSAGE value="Añadido el mapa para el juego asi como modificado el codigo para que siga al jugadpor por todo el mapa la camara (por arreglar las esquinas)" />
     <MESSAGE value="Añadido clase interfaz usuario y modificado ruta de acceso a los archivos de imagenenes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido clase interfaz usuario y modificado ruta de acceso a los archivos de imagenenes" />
+    <MESSAGE value="Creado el altar que acaba el juego asi como el mensaje inicial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creado el altar que acaba el juego asi como el mensaje inicial" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TFGiniciado$Main.ic" NAME="Main Coverage Results" MODIFIED="1716721508582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

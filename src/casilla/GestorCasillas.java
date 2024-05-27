@@ -1,9 +1,11 @@
 package casilla;
 
 import main.PanelJuego;
+import main.Util;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -26,36 +28,36 @@ public class GestorCasillas {
     }
 
     public void getCasillaImage() {
-        try {
+
             //CASILLAS PARA EL SUELO
-            casillas[0] = new Casilla();
-            casillas[0].image = ImageIO.read(getClass().getResourceAsStream("/casillas/suelo/suelo0.png"));
-            casillas[1] = new Casilla();
-            casillas[1].image = ImageIO.read(getClass().getResourceAsStream("/casillas/suelo/suelo1.png"));
-            casillas[2] = new Casilla();
-            casillas[2].image = ImageIO.read(getClass().getResourceAsStream("/casillas/suelo/suelo2.png"));
-            casillas[3] = new Casilla();
-            casillas[3].image = ImageIO.read(getClass().getResourceAsStream("/casillas/suelo/suelo3.png"));
+            setup(0,"/casillas/suelo/suelo0.png",false);
+
+            setup(1,"/casillas/suelo/suelo1.png",false);
+
+            setup(2,"/casillas/suelo/suelo2.png",false);
+
+            setup(3,"/casillas/suelo/suelo3.png",false);
 
             //CASILLAS PARA LAS PAREDES
-            casillas[4] = new Casilla();
-            casillas[4].image = ImageIO.read(getClass().getResourceAsStream("/casillas/paredes/muro1.png"));
-            casillas[4].colision = true;
-            casillas[5] = new Casilla();
-            casillas[5].image = ImageIO.read(getClass().getResourceAsStream("/casillas/paredes/muro2.png"));
-            casillas[5].colision = true;
-            casillas[6] = new Casilla();
-            casillas[6].image = ImageIO.read(getClass().getResourceAsStream("/casillas/paredes/muro3.png"));
-            casillas[6].colision = true;
-            casillas[7] = new Casilla();
-            casillas[7].image = ImageIO.read(getClass().getResourceAsStream("/casillas/paredes/muro4.png"));
-            casillas[7].colision = true;
-            casillas[8] = new Casilla();
-            casillas[8].image = ImageIO.read(getClass().getResourceAsStream("/casillas/paredes/muro5.png"));
-            casillas[8].colision = true;
 
+            setup(4,"/casillas/paredes/muro1.png",true);
+            setup(5,"/casillas/paredes/muro2.png",true);
+            setup(6,"/casillas/paredes/muro3.png",true);
+            setup(7,"/casillas/paredes/muro4.png",true);
+            setup(8,"/casillas/paredes/muro5.png",true);
 
-        } catch (IOException e) {
+    }
+
+    public void setup(int i, String rutaImagen, boolean colision)
+    {
+        Util util = new Util();
+        try {
+            casillas[i] = new Casilla();
+            casillas[i].imagen = ImageIO.read(getClass().getResourceAsStream(rutaImagen));
+            casillas[i].imagen = util.escalada(casillas[i].imagen, pJuego.dimensionCasillas, pJuego.dimensionCasillas);
+            casillas[i].colision = colision;
+        }catch (IOException e)
+        {
             e.printStackTrace();
         }
     }
@@ -80,7 +82,7 @@ public class GestorCasillas {
                     (yMundo + pJuego.dimensionCasillas > pJuego.jugador.posMundoY - pJuego.jugador.posYPantalla) ||
                     (yMundo - pJuego.dimensionCasillas < pJuego.jugador.posMundoY + pJuego.jugador.posYPantalla))
             {
-                g2.drawImage(casillas[numCasilla].image, xPantalla, yPantalla, pJuego.dimensionCasillas, pJuego.dimensionCasillas, null);
+                g2.drawImage(casillas[numCasilla].imagen, xPantalla, yPantalla, null);
             }
             colMundo++;
 
