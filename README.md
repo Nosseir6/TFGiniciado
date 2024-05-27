@@ -1,9 +1,9 @@
-Este es un proyecto de un videojuego de mazmorra en el cual el objetivo era simular algo a los roguelike, pero me di cuenta que tener diversos niveles asi como mapas iba a resultar imposible de hacer a tiempo una vez me puse a invetigar.
 
 # Proyecto: Mazmorra Java
 
 ## Descripción
-Este proyecto es un videojuego de mazmorra desarrollado en Java. El objetivo del juego es explorar una mazmorra llena de enemigos y peligros para encontrar el tesoro oculto en el altar final. El juego está inspirado en los roguelikes clásicos y cuenta con gráficos simples pero efectivos.
+Este proyecto es un videojuego de mazmorra desarrollado en Java. Este es un proyecto de un videojuego de mazmorra en el cual el objetivo era simular algo a los roguelike, pero me di cuenta que tener diversos niveles asi como mapas iba a resultar imposible de hacer a tiempo.
+
 
 ## Historia del Proyecto
 Empece investigando como funcionaban los motores y que tenia que tener en cuenta a la hora de crear un juego, tambien vi varios videos de posibles juegos de los que guiarme, ya que no habia mucha informacion para poder crear juegos en java, en especial algunos que incluyeran graficos.
