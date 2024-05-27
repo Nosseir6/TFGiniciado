@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Añadido el diagrama de Clases.puml">
+    <list default="true" id="9dc71c86-20e6-47b9-84bd-5db963c108d2" name="Changes" comment="Añadidos los 30 enemigos y modificado el texto">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GestorEntidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GestorEntidades.java" afterDir="false" />
@@ -195,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716841752019</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Añadidos los 30 enemigos y modificado el texto">
+      <option name="closed" value="true" />
+      <created>1716845965512</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716845965512</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,7 +231,8 @@
     <MESSAGE value="Creado los enemigos y diseñado el juego para que acabe si el jugador se queda sin vida" />
     <MESSAGE value="Añadida la documentacion del codigo" />
     <MESSAGE value="Añadido el diagrama de Clases.puml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido el diagrama de Clases.puml" />
+    <MESSAGE value="Añadidos los 30 enemigos y modificado el texto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadidos los 30 enemigos y modificado el texto" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TFGiniciado$Main.ic" NAME="Main Coverage Results" MODIFIED="1716721508582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

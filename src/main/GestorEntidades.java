@@ -36,24 +36,18 @@ public class GestorEntidades {
         pJuego.objetos[1].posMundoY = 12 * pJuego.dimensionCasillas;
 
         // LLAVES
-        pJuego.objetos[2] = new Llave(pJuego);
-        pJuego.objetos[2].posMundoX = 10 * pJuego.dimensionCasillas;
-        pJuego.objetos[2].posMundoY = 15 * pJuego.dimensionCasillas;
         pJuego.objetos[3] = new Llave(pJuego);
-        pJuego.objetos[3].posMundoX = pJuego.dimensionCasillas;
+        pJuego.objetos[3].posMundoX = 15 *pJuego.dimensionCasillas;
         pJuego.objetos[3].posMundoY = 5 * pJuego.dimensionCasillas;
         pJuego.objetos[4] = new Llave(pJuego);
-        pJuego.objetos[4].posMundoX = 8 * pJuego.dimensionCasillas;
-        pJuego.objetos[4].posMundoY = 20 * pJuego.dimensionCasillas;
+        pJuego.objetos[4].posMundoX = 2 * pJuego.dimensionCasillas;
+        pJuego.objetos[4].posMundoY = 27 * pJuego.dimensionCasillas;
         pJuego.objetos[5] = new Llave(pJuego);
-        pJuego.objetos[5].posMundoX = 2 * pJuego.dimensionCasillas;
-        pJuego.objetos[5].posMundoY = 27 * pJuego.dimensionCasillas;
+        pJuego.objetos[5].posMundoX = 9 * pJuego.dimensionCasillas;
+        pJuego.objetos[5].posMundoY = 1 * pJuego.dimensionCasillas;
         pJuego.objetos[6] = new Llave(pJuego);
-        pJuego.objetos[6].posMundoX = 9 * pJuego.dimensionCasillas;
-        pJuego.objetos[6].posMundoY = 1 * pJuego.dimensionCasillas;
-        pJuego.objetos[7] = new Llave(pJuego);
-        pJuego.objetos[7].posMundoX = 3 * pJuego.dimensionCasillas;
-        pJuego.objetos[7].posMundoY = 23 * pJuego.dimensionCasillas;
+        pJuego.objetos[6].posMundoX = 3 * pJuego.dimensionCasillas;
+        pJuego.objetos[6].posMundoY = 23 * pJuego.dimensionCasillas;
 
         // PUERTAS
         pJuego.objetos[8] = new Puerta(pJuego);
