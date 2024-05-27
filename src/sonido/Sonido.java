@@ -10,6 +10,7 @@ public class Sonido {
 
     public Sonido() {
         sonidos[0] = getClass().getResource("/sonidos/Hades-No-Escape.wav");
+        sonidos[1] = getClass().getResource("/sonidos/LevelFinish.wav");
     }
 
     public void setFile(int i) {

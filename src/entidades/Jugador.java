@@ -171,12 +171,12 @@ public class Jugador extends SuperEntidad
                 case LLAVE -> {
                     pJuego.objetos[i] = null;
                     numLlaves++;
-                    pJuego.iu.showMensaje("Obetenida una llave");
+                    pJuego.iu.mostrarMensaje("Obetenida una llave");
                 }
                 case COFRE -> {
                     if (((Cofre) pJuego.objetos[i]).abierto)
                     {
-                        pJuego.iu.showMensaje("El cofre esta vacio");
+                        pJuego.iu.mostrarMensaje("El cofre esta vacio");
                     }
                     else
                     {
@@ -210,12 +210,18 @@ public class Jugador extends SuperEntidad
                             }
                             numLlaves--;
                             ((Puerta) pJuego.objetos[i]).abierta = true;
-                            pJuego.iu.showMensaje("Puerta abierta");
+                            pJuego.iu.mostrarMensaje("Puerta abierta");
                         }
                     }
 
 
                 }
+                case ALTAR -> {
+                    pJuego.iu.juegoAcabado = true;
+                    pJuego.stopMusic();
+                    pJuego.playEfectos(1);
+                }
+
             }
         }
     }

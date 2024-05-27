@@ -27,9 +27,10 @@ public class PanelJuego extends JPanel implements Runnable {
 
     //FPS
     int fps = 60;
-    int playerX = 100;
-    int playerY = 100;
-    int playerSpeed = 4;
+
+    //Mensaje de Inicio de Juego
+    public boolean inicioJuego = true;
+
 
     public InterfazUsuario iu = new InterfazUsuario(this);
     public GestorColisiones gestColisiones = new GestorColisiones(this);
@@ -40,6 +41,8 @@ public class PanelJuego extends JPanel implements Runnable {
     Sonido sonido = new Sonido();
     public Jugador jugador = new Jugador(this,gestTec);
     public SuperObjeto[] objetos = new SuperObjeto[15];
+    public int contadorMensajeInicio = 0;
+
 
 
     //Constructor
@@ -56,6 +59,7 @@ public class PanelJuego extends JPanel implements Runnable {
     {
         gestObj.setObjeto();
         playMusica(0);
+        iu.setDialogo();
     }
 
     public void startGameThread() {
@@ -94,6 +98,12 @@ public class PanelJuego extends JPanel implements Runnable {
     {
         //ACTUALIZAR JUGADOR
         jugador.update();
+
+        if (contadorMensajeInicio < 500)
+            contadorMensajeInicio++;
+        else
+            inicioJuego = false;
+
     }
     public void paintComponent(Graphics g)
     {
@@ -103,20 +113,22 @@ public class PanelJuego extends JPanel implements Runnable {
 
         //DIBUJAR MAPA
         gestCasillas.draw(g2);
+
         //DIBUJAR OBJETOS
         for (SuperObjeto objeto : objetos)
         {
             if (objeto != null)
-            {
                 objeto.draw(g2,this);
-            }
         }
 
         //DIBUJAR JUGADOR
         jugador.draw(g2);
 
         //DIBUJAR INTERFAZ USUARIO
+
         iu.draw(g2);
+
+        //DIBUJAR MENSAJE DE INICIO DE JUEGO
 
         g2.dispose();
     }

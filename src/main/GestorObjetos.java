@@ -1,5 +1,6 @@
 package main;
 
+import objetos.Altar;
 import objetos.Cofre;
 import objetos.Llave;
 import objetos.Puerta;
@@ -50,6 +51,10 @@ public class GestorObjetos
         pJuego.objetos[10] = new Puerta();
         pJuego.objetos[10].posMundoX = 16 * pJuego.dimensionCasillas;
         pJuego.objetos[10].posMundoY = 18 * pJuego.dimensionCasillas;
+        //ALTAR
+        pJuego.objetos[11] = new Altar();
+        pJuego.objetos[11].posMundoX = 9 * pJuego.dimensionCasillas;
+        pJuego.objetos[11].posMundoY = 36 * pJuego.dimensionCasillas;
 
     }
 }
